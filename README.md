@@ -16,6 +16,11 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
+```sh
+npm install react react-dom react-router-dom
+npm install @vitejs/plugin-react --save-dev
+```
+
 ### Compile and Hot-Reload for Development
 
 ```sh
