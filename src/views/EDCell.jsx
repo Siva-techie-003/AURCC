@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import data from '../assets/ED-cell.json';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
@@ -36,7 +36,7 @@ const EDCell = () => {
                     title="Description"
                     icon="ℹ️"
                 >
-                    <div className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm text-left">
+                    <div className="bg-[rgb(220,140,140)] p-6 rounded-2xl border border-[rgb(200,120,120)] shadow-sm text-left">
                         <p className="text-base lg:text-lg xl:text-xl font-medium text-gray-800 leading-relaxed italic">
                             "Entrepreneurship is the person who plays a certain price for a product to resell it at an uncertain price, hereby making decisions about obtaining and using the resources while consequently admitting the risk of enterprise."
                         </p>
@@ -66,9 +66,9 @@ const EDCell = () => {
                         {data.description.key_activities.map((activity, i) => (
                             <div
                                 key={i}
-                                className="bg-white rounded-xl p-6 shadow-sm border border-indigo-50 hover:shadow-md transition-all text-left"
+                                className="bg-white rounded-xl p-6 shadow-sm border border-[rgb(220,140,140)] hover:shadow-md transition-all text-left"
                             >
-                                <h4 className="text-lg lg:text-xl font-bold text-indigo-900 mb-3">{activity.name}</h4>
+                                <h4 className="text-lg lg:text-xl font-bold text-[rgb(100,25,25)] mb-3">{activity.name}</h4>
                                 <div className="flex items-start gap-2 text-sm text-gray-600 mb-2">
                                     <span className="font-bold text-gray-800">📍 Location:</span>
                                     <span>{activity.location}</span>
@@ -91,7 +91,7 @@ const EDCell = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {data.MOU.map((mou, i) => (
                             <div key={i} className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg border border-gray-100 text-left">
-                                <span className="text-blue-500 font-bold">▶</span>
+                                <span className="text-[rgb(120,45,45)] font-bold">▶</span>
                                 <span className="text-base font-medium text-gray-800">{mou}</span>
                             </div>
                         ))}
@@ -111,7 +111,7 @@ const EDCell = () => {
                                 href={`https://${link}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-colors shadow-sm"
+                                className="px-6 py-3 bg-[rgb(115,40,40)] text-white font-bold rounded-full hover:bg-[rgb(110,35,35)] transition-colors shadow-sm"
                             >
                                 {link}
                             </a>

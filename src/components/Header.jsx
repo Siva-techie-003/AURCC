@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -112,7 +112,7 @@ const Header = () => {
                         <div className="flex items-center space-x-3 sm:space-x-5 cursor-pointer transform hover:scale-[1.02] transition-all" onClick={() => navigate('/')}>
                             <img src="/logo_new5.png" alt="AURCC Logo" className="h-12 w-auto sm:h-16 md:h-18 lg:h-20" />
                             {/* <div className="flex flex-col min-w-0">
-                                <span className="text-xl sm:text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-indigo-700 leading-none">AURCC</span>
+                                <span className="text-xl sm:text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] leading-none">AURCC</span>
                                 <span className="text-[10px] sm:text-xs md:text-sm text-gray-500 font-bold tracking-tighter mt-1">Anna University Regional Campus Coimbatore</span>
                             </div> */}
                         </div>
@@ -121,13 +121,13 @@ const Header = () => {
                         <div className="hidden lg:flex items-center space-x-2">
                             {sections.map((section, idx) => (
                                 <div key={idx} className="relative group">
-                                    <button className="px-4 py-2 text-sm font-black text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter">
+                                    <button className="px-4 py-2 text-sm font-black text-gray-700 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all flex items-center gap-1.5 uppercase tracking-tighter">
                                         {section.name}
                                         <svg className="w-4 h-4 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
                                     </button>
                                     <div className="absolute top-full right-0 mt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">
                                         {section.links.map((link, lIdx) => (
-                                            <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-indigo-600 hover:bg-indigo-50/50 transition-colors">
+                                            <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
                                                 {link.name}
                                             </Link>
                                         ))}
@@ -137,7 +137,7 @@ const Header = () => {
                         </div>
 
                         {/* Mobile Toggle */}
-                        <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-3 rounded-2xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-all active:scale-95">
+                        <button onClick={() => setIsMobileMenuOpen(true)} className="lg:hidden p-3 rounded-2xl bg-[rgb(220,140,140)] text-[rgb(110,35,35)] hover:bg-[rgb(200,120,120)] transition-all active:scale-95">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
                         </button>
                     </nav>
@@ -146,11 +146,11 @@ const Header = () => {
 
             {/* Mobile Menu Backdrop */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 z-[100] bg-indigo-950/40 backdrop-blur-md transition-all duration-500" onClick={() => setIsMobileMenuOpen(false)}>
+                <div className="fixed inset-0 z-[100] bg-[rgb(90,20,20)]/40 backdrop-blur-md transition-all duration-500" onClick={() => setIsMobileMenuOpen(false)}>
                     {/* Sidebar */}
                     <div className="fixed inset-y-0 right-0 max-w-[320px] w-full bg-white shadow-2xl overflow-hidden flex flex-col animate-slideLeft" onClick={e => e.stopPropagation()}>
                         <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                            <span className="text-xl font-black text-indigo-900 uppercase">Navigation</span>
+                            <span className="text-xl font-black text-[rgb(100,25,25)] uppercase">Navigation</span>
                             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 rounded-xl bg-gray-50 text-gray-400 hover:text-gray-600">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" /></svg>
                             </button>
@@ -158,14 +158,14 @@ const Header = () => {
                         <nav className="flex-grow overflow-y-auto p-4 space-y-2">
                             {sections.map((section, idx) => (
                                 <div key={idx} className="border-b border-gray-50 last:border-0">
-                                    <button onClick={() => toggleSection(idx)} className="w-full flex items-center justify-between py-4 px-2 text-indigo-950 font-black uppercase text-xs tracking-widest hover:text-indigo-600">
+                                    <button onClick={() => toggleSection(idx)} className="w-full flex items-center justify-between py-4 px-2 text-[rgb(90,20,20)] font-black uppercase text-xs tracking-widest hover:text-[rgb(115,40,40)]">
                                         {section.name}
                                         <svg className={`w-4 h-4 transform transition-transform duration-300 ${section.isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
                                     </button>
                                     {section.isOpen && (
                                         <div className="pl-4 pb-4 space-y-1">
                                             {section.links.map((link, lIdx) => (
-                                                <Link key={lIdx} to={link.route} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl transition-all">
+                                                <Link key={lIdx} to={link.route} onClick={() => setIsMobileMenuOpen(false)} className="block py-2.5 px-4 text-xs font-bold text-gray-500 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)] rounded-xl transition-all">
                                                     {link.name}
                                                 </Link>
                                             ))}
@@ -175,7 +175,7 @@ const Header = () => {
                             ))}
                         </nav>
                         <div className="p-6 bg-gray-50 border-t border-gray-100">
-                            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-indigo-900 text-white text-center rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-lg">Get in Touch</Link>
+                            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-4 bg-[rgb(100,25,25)] text-white text-center rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-lg">Get in Touch</Link>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import data from '../assets/sports.json';
 import './Sports.css';
 
@@ -21,7 +21,7 @@ const Sports = () => {
             <section className="max-w-7xl mx-auto py-12 px-4 space-y-12">
                 {/* Overview Card */}
                 <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-5 flex items-center justify-center gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-5 flex items-center justify-center gap-3">
                         <span className="text-xl lg:text-2xl">📝</span>
                         <h2 className="text-xl lg:text-2xl font-bold text-white text-center">Overview</h2>
                     </div>
@@ -34,21 +34,21 @@ const Sports = () => {
 
                 {/* Facilities Card */}
                 <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-5 flex items-center justify-center gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-5 flex items-center justify-center gap-3">
                         <span className="text-xl lg:text-2xl">🏟️</span>
                         <h2 className="text-xl lg:text-2xl font-bold text-white text-center">Facilities</h2>
                     </div>
                     <div className="p-8">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="bg-blue-50/50 rounded-2xl p-8 border border-blue-100 flex flex-col items-start transition-all hover:bg-white hover:shadow-md">
+                            <div className="bg-[rgb(220,140,140)]/50 rounded-2xl p-8 border border-[rgb(200,120,120)] flex flex-col items-start transition-all hover:bg-white hover:shadow-md">
                                 <div className="flex items-center gap-3 mb-6">
                                     <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-3xl">🎯</div>
-                                    <h3 className="text-xl lg:text-2xl font-black text-indigo-900 uppercase">Indoor Games</h3>
+                                    <h3 className="text-xl lg:text-2xl font-black text-[rgb(100,25,25)] uppercase">Indoor Games</h3>
                                 </div>
                                 <ul className="space-y-4 w-full">
                                     {(Array.isArray(data?.facilities?.IndoorGames) ? data.facilities.IndoorGames : []).map((game, i) => (
                                         <li key={i} className="flex gap-4 items-center animate-fadeInUp">
-                                            <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
+                                            <span className="h-2 w-2 rounded-full bg-[rgb(220,140,140)]0"></span>
                                             <span className="text-base lg:text-lg font-bold text-gray-700">{game}</span>
                                         </li>
                                     ))}

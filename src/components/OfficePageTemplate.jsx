@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import './OfficePageTemplate.css';
 
 const OfficePageTemplate = ({
@@ -47,7 +47,7 @@ const OfficePageTemplate = ({
     }, [sections, currentSection]);
 
     return (
-        <main className="bg-gradient-to-br from-indigo-100 via-blue-50 to-white min-h-screen font-sans text-gray-800">
+        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[60vh] overflow-hidden flex items-center justify-center animate-fadeIn">
                 <img src={heroImage} alt={officeName} className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -70,7 +70,7 @@ const OfficePageTemplate = ({
                                     key={section.key}
                                     onClick={() => scrollToSection(section.key)}
                                     className={`font-medium px-3 sm:px-4 md:px-5 py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base transition duration-300 whitespace-nowrap touch-manipulation ${currentSection === section.key
-                                            ? 'bg-indigo-600 text-white shadow-lg'
+                                            ? 'bg-[rgb(115,40,40)] text-white shadow-lg'
                                             : 'text-gray-700 hover:bg-gray-100 hover:shadow-md'
                                         }`}
                                 >
@@ -89,7 +89,7 @@ const OfficePageTemplate = ({
 
             {/* Contact Button */}
             <div className="flex justify-center mt-2 mb-6 sm:mb-8 px-4">
-                <a href={`mailto:${contactEmail}`} className="apply-contact-btn bg-gradient-to-r from-blue-600 to-indigo-500 text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:from-blue-700 hover:to-indigo-700 transition-all text-base sm:text-lg md:text-xl transform hover:scale-105 touch-manipulation w-full sm:w-auto text-center">
+                <a href={`mailto:${contactEmail}`} className="apply-contact-btn bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white font-bold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:from-[rgb(115,63,63)] hover:to-[rgb(115,25,25)] transition-all text-base sm:text-lg md:text-xl transform hover:scale-105 touch-manipulation w-full sm:w-auto text-center">
                     {contactButtonText}
                 </a>
             </div>

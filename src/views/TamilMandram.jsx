@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import data from '../assets/tamil mandram.json';
 import './TamilMandram.css';
 
@@ -90,7 +90,7 @@ const TamilMandram = () => {
                                 <h3 className="text-xl lg:text-2xl font-bold text-[#23120b] mb-4 border-b-2 border-amber-200 pb-2">அவைத்தலைவர்</h3>
                                 <div className="space-y-3">
                                     <p className="text-lg text-gray-800"><span className="font-bold text-[#3c2f25]">பெயர்:</span> <span className="font-medium text-emerald-900">{data.பொறுப்பாளர்.அவைத்தலைவர்.பெயர்}</span></p>
-                                    <p className="text-lg text-gray-800"><span className="font-bold text-[#3c2f25]">மின்னஞ்சல்:</span> <a href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்['அவர்களின் மின்னஞ்சல்']}`} className="text-blue-700 hover:underline">{data.பொறுப்பாளர்.அவைத்தலைவர்['அவர்களின் மின்னஞ்சல்']}</a></p>
+                                    <p className="text-lg text-gray-800"><span className="font-bold text-[#3c2f25]">மின்னஞ்சல்:</span> <a href={`mailto:${data.பொறுப்பாளர்.அவைத்தலைவர்['அவர்களின் மின்னஞ்சல்']}`} className="text-[rgb(110,35,35)] hover:underline">{data.பொறுப்பாளர்.அவைத்தலைவர்['அவர்களின் மின்னஞ்சல்']}</a></p>
                                 </div>
                             </div>
                         </div>

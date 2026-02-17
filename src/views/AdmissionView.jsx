@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import admissionData from '../assets/admission.json';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
@@ -51,7 +51,7 @@ const AdmissionView = () => {
                 >
                     {Object.entries(data.courses_offered).map(([category, programs]) => (
                         <div key={category} className="mb-6 sm:mb-8 text-left">
-                            <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold text-indigo-700 mb-3">{category}</h3>
+                            <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold text-[rgb(110,35,35)] mb-3">{category}</h3>
                             <div className="overflow-x-auto">
                                 <table className="table-auto w-full border border-gray-300 text-left mb-4 rounded-xl overflow-hidden shadow-sm">
                                     <thead className="bg-gray-200">
@@ -84,8 +84,8 @@ const AdmissionView = () => {
                 >
                     {Object.entries(data.eligibility_criteria).map(([program, text]) => (
                         <div key={program} className="mb-4 sm:mb-6 text-left">
-                            <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-indigo-700 mb-2">{program}</h3>
-                            <p className="text-sm lg:text-base text-gray-800 leading-relaxed bg-blue-50/50 p-4 rounded-lg border border-blue-100">{text}</p>
+                            <h3 className="text-base lg:text-lg xl:text-xl font-semibold text-[rgb(110,35,35)] mb-2">{program}</h3>
+                            <p className="text-sm lg:text-base text-gray-800 leading-relaxed bg-[rgb(220,140,140)]/50 p-4 rounded-lg border border-[rgb(200,120,120)]">{text}</p>
                         </div>
                     ))}
                 </OfficeContentSection>

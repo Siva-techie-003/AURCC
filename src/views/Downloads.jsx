@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import './Downloads.css';
 
 const Downloads = () => {
@@ -45,7 +45,7 @@ const Downloads = () => {
 
     const DownloadCard = ({ title, links, icon }) => (
         <div className="bg-white/70 backdrop-blur-md rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all animate-fadeIn">
-            <div className="bg-gradient-to-r from-indigo-700 to-blue-600 py-6 px-8 flex justify-between items-center text-white">
+            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 flex justify-between items-center text-white">
                 <h2 className="text-xl lg:text-2xl font-bold">{title}</h2>
                 <span className="text-2xl opacity-50">{icon}</span>
             </div>
@@ -57,13 +57,13 @@ const Downloads = () => {
                             href={link.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-center p-5 bg-blue-50/50 rounded-2xl border border-blue-100 hover:bg-white hover:shadow-md hover:border-indigo-300 transition-all"
+                            className="group flex items-center p-5 bg-[rgb(220,140,140)]/50 rounded-2xl border border-[rgb(200,120,120)] hover:bg-white hover:shadow-md hover:border-[rgb(160,80,80)] transition-all"
                         >
-                            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-indigo-600 mr-4 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                            <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-[rgb(115,40,40)] mr-4 group-hover:bg-[rgb(115,40,40)] group-hover:text-white transition-all">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                             </div>
-                            <span className="text-sm lg:text-base font-bold text-gray-700 group-hover:text-indigo-900 leading-snug">{link.label}</span>
-                            <svg className="ml-auto w-5 h-5 text-gray-300 group-hover:text-indigo-500 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
+                            <span className="text-sm lg:text-base font-bold text-gray-700 group-hover:text-[rgb(100,25,25)] leading-snug">{link.label}</span>
+                            <svg className="ml-auto w-5 h-5 text-gray-300 group-hover:text-[rgb(120,45,45)] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
                         </a>
                     ))}
                 </div>
@@ -72,7 +72,7 @@ const Downloads = () => {
     );
 
     return (
-        <main className="bg-gradient-to-br from-indigo-100 via-blue-50 to-white min-h-screen font-sans text-gray-800 text-left">
+        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800 text-left">
             {/* Hero Section */}
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[45vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="Downloads" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -86,14 +86,14 @@ const Downloads = () => {
             {/* Sticky Navigation */}
             <div className="sticky top-0 z-30">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-blue-50">
+                    <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
                             <button
                                 key={section.key}
                                 onClick={() => scrollToSection(section.key)}
                                 className={`font-bold px-5 py-3 rounded-full text-xs sm:text-sm lg:text-base transition-all duration-300 whitespace-nowrap ${currentSection === section.key
-                                        ? 'bg-indigo-600 text-white shadow-md'
-                                        : 'text-gray-700 hover:bg-indigo-50 hover:text-indigo-600'
+                                        ? 'bg-[rgb(115,40,40)] text-white shadow-md'
+                                        : 'text-gray-700 hover:bg-[rgb(220,140,140)] hover:text-[rgb(115,40,40)]'
                                     }`}
                             >
                                 {section.label}

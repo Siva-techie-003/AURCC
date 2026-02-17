@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import data from '../assets/aicte&moe.json';
 import './AicteAndMoe.css';
 
@@ -52,7 +52,7 @@ const AicteAndMoe = () => {
     };
 
     return (
-        <main className="bg-gradient-to-br from-indigo-100 via-blue-50 to-white min-h-screen font-sans text-gray-800">
+        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="AICTE & MOE Cell" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -74,7 +74,7 @@ const AicteAndMoe = () => {
                                 <button
                                     key={section.key}
                                     onClick={() => scrollToSection(section.key)}
-                                    className={`font-medium px-3 sm:px-4 md:px-5 py-2 md:py-3 rounded-full text-xs sm:text-sm lg:text-base transition duration-300 whitespace-nowrap ${currentSection === section.key ? 'bg-indigo-600 text-white' : 'text-gray-700 hover:bg-gray-100'
+                                    className={`font-medium px-3 sm:px-4 md:px-5 py-2 md:py-3 rounded-full text-xs sm:text-sm lg:text-base transition duration-300 whitespace-nowrap ${currentSection === section.key ? 'bg-[rgb(115,40,40)] text-white' : 'text-gray-700 hover:bg-gray-100'
                                         }`}
                                 >
                                     {section.label}
@@ -89,7 +89,7 @@ const AicteAndMoe = () => {
             <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-14 px-2 md:px-9 flex flex-col gap-8 sm:gap-10 lg:gap-12">
                 {/* Objectives */}
                 <div id="objectives" ref={sectionRefs.objectives} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white">🎯</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Objectives</h2>
                     </div>
@@ -106,7 +106,7 @@ const AicteAndMoe = () => {
 
                 {/* Important Links */}
                 <div id="important_links" ref={sectionRefs.important_links} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white">🔗</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Important Links</h2>
                     </div>
@@ -114,7 +114,7 @@ const AicteAndMoe = () => {
                         <ul className="list-disc pl-5 space-y-2">
                             {Object.entries(data.home['Important Links']).map(([key, link]) => (
                                 <li key={key} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-indigo-700 transition">{key}</a>
+                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] underline hover:text-[rgb(110,35,35)] transition">{key}</a>
                                 </li>
                             ))}
                         </ul>
@@ -123,7 +123,7 @@ const AicteAndMoe = () => {
 
                 {/* Circulars & Notifications */}
                 <div id="circulars_notifications" ref={sectionRefs.circulars_notifications} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white">📢</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Circulars & Notifications</h2>
                     </div>
@@ -131,7 +131,7 @@ const AicteAndMoe = () => {
                         <ul className="list-disc pl-5 space-y-2">
                             {Object.entries(data.Circulars_Notifications).map(([title, link]) => (
                                 <li key={title} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-indigo-700 transition">{title}</a>
+                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] underline hover:text-[rgb(110,35,35)] transition">{title}</a>
                                 </li>
                             ))}
                         </ul>
@@ -140,7 +140,7 @@ const AicteAndMoe = () => {
 
                 {/* Approval Letters */}
                 <div id="approval_letters" ref={sectionRefs.approval_letters} className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white">📄</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Approval Letters</h2>
                     </div>
@@ -148,7 +148,7 @@ const AicteAndMoe = () => {
                         <ul className="list-disc pl-5 space-y-2">
                             {Object.entries(approvalLetters).map(([title, link]) => (
                                 <li key={title} className="text-base lg:text-lg xl:text-xl">
-                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline hover:text-indigo-700 transition">{title}</a>
+                                    <a href={link} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] underline hover:text-[rgb(110,35,35)] transition">{title}</a>
                                 </li>
                             ))}
                         </ul>

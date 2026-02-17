@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import data from '../assets/DGATE-cell.json';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
@@ -88,11 +88,11 @@ const DGATE = () => {
                     title="Activities"
                     icon="🎯"
                 >
-                    <div className="relative h-24 overflow-hidden mb-2 rounded-xl bg-gradient-to-r from-blue-100 via-indigo-50 to-white shadow-inner border border-blue-200 group">
+                    <div className="relative h-24 overflow-hidden mb-2 rounded-xl bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white shadow-inner border border-[rgb(180,100,100)] group">
                         <ul className="notice-ticker absolute w-full animate-vertical-scroll hover:animation-paused">
                             {activityHighlights.concat(activityHighlights).map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-3 px-6 py-4 text-blue-900 font-semibold text-sm lg:text-base h-24">
-                                    <span className="inline-block w-3 h-3 rounded-full bg-blue-500 animate-pulse flex-shrink-0"></span>
+                                <li key={idx} className="flex items-center gap-3 px-6 py-4 text-[rgb(100,25,25)] font-semibold text-sm lg:text-base h-24">
+                                    <span className="inline-block w-3 h-3 rounded-full bg-[rgb(220,140,140)]0 animate-pulse flex-shrink-0"></span>
                                     <span className="text-left">{item}</span>
                                 </li>
                             ))}
@@ -109,13 +109,13 @@ const DGATE = () => {
                     <div className="overflow-x-auto no-scrollbar">
                         <div className="flex space-x-6 min-w-max py-4">
                             {projectCards.map((project, idx) => (
-                                <div key={idx} className="project-card bg-gradient-to-br from-blue-100 via-white to-indigo-50 rounded-xl shadow-lg p-6 w-72 flex flex-col items-start transition-all duration-300 cursor-pointer relative group">
+                                <div key={idx} className="project-card bg-gradient-to-br from-[rgb(115,63,63)] via-white to-[rgb(115,25,25)] rounded-xl shadow-lg p-6 w-72 flex flex-col items-start transition-all duration-300 cursor-pointer relative group">
                                     <div className="text-3xl mb-3">
                                         {project.icon}
                                     </div>
-                                    <div className="font-bold text-base lg:text-lg text-blue-800 mb-2 text-left">{project.name}</div>
+                                    <div className="font-bold text-base lg:text-lg text-[rgb(105,30,30)] mb-2 text-left">{project.name}</div>
                                     <div className="text-xs lg:text-sm text-gray-600 line-clamp-3 text-left">{project.description}</div>
-                                    <div className={`absolute top-3 right-3 text-[10px] px-2 py-1 rounded-full font-bold uppercase ${project.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'}`}>
+                                    <div className={`absolute top-3 right-3 text-[10px] px-2 py-1 rounded-full font-bold uppercase ${project.status === 'Completed' ? 'bg-green-100 text-green-700' : 'bg-[rgb(200,120,120)] text-[rgb(110,35,35)]'}`}>
                                         {project.status}
                                     </div>
                                 </div>
@@ -134,9 +134,9 @@ const DGATE = () => {
                         {data.description.participation_in_hackathon.map((participation, i) => (
                             <div
                                 key={i}
-                                className="bg-indigo-50 p-6 rounded-xl shadow-sm border border-indigo-100 transition-all hover:bg-white hover:shadow-md text-left"
+                                className="bg-[rgb(220,140,140)] p-6 rounded-xl shadow-sm border border-[rgb(200,120,120)] transition-all hover:bg-white hover:shadow-md text-left"
                             >
-                                <h4 className="text-base lg:text-lg font-bold text-indigo-900 mb-2">{participation.project}</h4>
+                                <h4 className="text-base lg:text-lg font-bold text-[rgb(100,25,25)] mb-2">{participation.project}</h4>
                                 <p className="text-sm lg:text-base text-gray-700 leading-relaxed">{participation.achievement}</p>
                             </div>
                         ))}

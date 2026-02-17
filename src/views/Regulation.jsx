@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import regulationsData from '../assets/regulation.json';
 import RegulationCard from '../components/RegulationCard';
 import './Regulation.css';
@@ -15,7 +15,7 @@ const Regulation = () => {
     }));
 
     return (
-        <div className="flex-grow bg-gradient-to-br from-gray-100 via-blue-50 to-white min-h-screen text-left">
+        <div className="flex-grow bg-gradient-to-br from-gray-100 via-[rgb(115,45,45)] to-white min-h-screen text-left">
             {/* Hero section */}
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[40vh] overflow-hidden flex items-center justify-center">
                 <img
@@ -23,24 +23,24 @@ const Regulation = () => {
                     alt="Regulations"
                     className="absolute inset-0 w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-indigo-950/80"></div>
+                <div className="absolute inset-0 bg-[rgb(90,20,20)]/80"></div>
                 <div className="relative z-10 text-center animate-fadeIn px-4">
                     <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-4">Regulations</h1>
-                    <div className="h-2 w-24 bg-blue-500 mx-auto rounded-full"></div>
+                    <div className="h-2 w-24 bg-[rgb(220,140,140)]0 mx-auto rounded-full"></div>
                 </div>
             </section>
 
             <main className="max-w-7xl mx-auto py-16 px-4 space-y-20">
                 <section className="animate-fadeInUp">
-                    <header className="flex flex-col md:flex-row md:items-end justify-between border-b-4 border-indigo-900 pb-8 mb-12 gap-6">
+                    <header className="flex flex-col md:flex-row md:items-end justify-between border-b-4 border-[rgb(100,25,25)] pb-8 mb-12 gap-6">
                         <div className="max-w-xl">
-                            <h2 className="text-2xl lg:text-4xl font-black text-indigo-950 uppercase tracking-tight">Academic Integrity</h2>
+                            <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">Academic Integrity</h2>
                             <p className="text-lg text-gray-500 font-bold mt-2 italic">Essential guidelines for students under Anna University regulations.</p>
                         </div>
                         <div className="flex gap-4">
-                            <div className="px-6 py-3 bg-indigo-50 border border-indigo-100 rounded-2xl flex items-center gap-3">
+                            <div className="px-6 py-3 bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] rounded-2xl flex items-center gap-3">
                                 <span className="text-xl">📜</span>
-                                <span className="text-xs font-black text-indigo-950 uppercase tracking-widest">Official Policy</span>
+                                <span className="text-xs font-black text-[rgb(90,20,20)] uppercase tracking-widest">Official Policy</span>
                             </div>
                         </div>
                     </header>

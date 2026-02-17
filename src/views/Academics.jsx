@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import academicsData from '../assets/academics.json';
 import './Academics.css';
@@ -171,7 +171,7 @@ const Academics = () => {
                 <div className="container mx-auto py-12 sm:py-16 text-white p-4 sm:p-6 md:p-9 relative z-10 text-center">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4">Academics</h1>
                     <p className="text-base lg:text-lg xl:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Explore our comprehensive academic programs and support services.</p>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg">
+                    <button className="bg-[rgb(220,140,140)]0 hover:bg-[rgb(115,40,40)] text-white font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg">
                         Learn More
                     </button>
                 </div>
@@ -194,8 +194,8 @@ const Academics = () => {
                                     key={index}
                                     onClick={() => setCurrentSection(section)}
                                     className={`font-semibold py-2 px-3 sm:px-4 border rounded shadow-sm flex items-center transition-all duration-200 ${currentSection === section
-                                            ? 'bg-blue-500 text-white border-blue-600'
-                                            : 'bg-white hover:bg-gray-100 text-gray-800 border-gray-300'
+                                        ? 'bg-[rgb(220,140,140)]0 text-white border-[rgb(115,40,40)]'
+                                        : 'bg-white hover:bg-gray-100 text-gray-800 border-gray-300'
                                         }`}
                                 >
                                     <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+﻿import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import QuickLinksSidebar from '../components/QuickLinksSidebar';
 import './HomeView.css';
 
 const HomeView = () => {
@@ -17,6 +18,16 @@ const HomeView = () => {
     const [sessionId, setSessionId] = useState(null);
     const [loading, setLoading] = useState(false);
     const chatContainerRef = useRef(null);
+
+    // State for Count Animation
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const statsRef = useRef(null);
+    const [counts, setCounts] = useState({
+        alumni: 0,
+        rank: 0,
+        years: 0,
+        placement: 0
+    });
 
     // Static Data
     const galleryImages = [
@@ -136,6 +147,64 @@ const HomeView = () => {
         scrollToBottom();
     }, [chatLog]);
 
+    // Count Animation Logic
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        setHasAnimated(true);
+                        animateCounts();
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        if (statsRef.current) {
+            observer.observe(statsRef.current);
+        }
+
+        return () => {
+            if (statsRef.current) {
+                observer.unobserve(statsRef.current);
+            }
+        };
+    }, [hasAnimated]);
+
+    const animateCounts = () => {
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const stepDuration = duration / steps;
+
+        const targets = {
+            alumni: 5000,
+            rank: 7,
+            years: 20,
+            placement: 100
+        };
+
+        let currentStep = 0;
+
+        const interval = setInterval(() => {
+            currentStep++;
+            const progress = currentStep / steps;
+            const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+
+            setCounts({
+                alumni: Math.floor(easeOutQuad * targets.alumni),
+                rank: Math.floor(easeOutQuad * targets.rank),
+                years: Math.floor(easeOutQuad * targets.years),
+                placement: Math.floor(easeOutQuad * targets.placement)
+            });
+
+            if (currentStep >= steps) {
+                clearInterval(interval);
+                setCounts(targets);
+            }
+        }, stepDuration);
+    };
+
     const sendMessage = async () => {
         if (userMessage.trim() === "") return;
 
@@ -181,15 +250,15 @@ const HomeView = () => {
                         />
                         <div className="absolute inset-0 opacity-35 bg-slate-950"></div>
                     </div>
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5 mix-blend-overlay">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 mix-blend-overlay">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="circuit-pattern" width="200" height="200" patternUnits="userSpaceOnUse">
-                                <path d="M50 0 L50 50 L100 50 M150 0 L150 50 L100 50 M100 50 L100 100 M0 100 L50 100 M50 100 L50 150 L100 150 M150 150 L200 150 M150 100 L150 200" fill="none" stroke="white" strokeWidth="1.5" />
-                                <circle cx="50" cy="50" r="5" fill="white" />
-                                <circle cx="150" cy="50" r="5" fill="white" />
-                                <circle cx="100" cy="100" r="5" fill="white" />
-                                <circle cx="50" cy="150" r="5" fill="white" />
-                                <circle cx="150" cy="150" r="5" fill="white" />
+                                <path d="M50 0 L50 50 L100 50 M150 0 L150 50 L100 50 M100 50 L100 100 M0 100 L50 100 M50 100 L50 150 L100 150 M150 150 L200 150 M150 100 L150 200" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                                <circle cx="50" cy="50" r="5" fill="currentColor" />
+                                <circle cx="150" cy="50" r="5" fill="currentColor" />
+                                <circle cx="100" cy="100" r="5" fill="currentColor" />
+                                <circle cx="50" cy="150" r="5" fill="currentColor" />
+                                <circle cx="150" cy="150" r="5" fill="currentColor" />
                             </pattern>
                             <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
                         </svg>
@@ -201,11 +270,11 @@ const HomeView = () => {
                                 Anna University
                             </span>
                         </h1>
-                        {/* <p className="text-lg sm:text-xl md:text-2xl text-blue-600 px-2">
+                        {/* <p className="text-lg sm:text-xl md:text-2xl text-[rgb(115,40,40)] px-2">
                             Shaping Tomorrow's Leaders Today
                         </p> */}
                         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
-                            <a href="#programs" className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-900 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                            <a href="#programs" className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-white text-[rgb(100,25,25)] rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
                                 Explore Programs
                             </a>
                             <a href="#about" className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
@@ -216,21 +285,23 @@ const HomeView = () => {
                 </section>
 
                 {/* Floating Stats Cards */}
-                <section className="container mx-auto px-4 sm:px-6 lg:px-8 relative mt-16 sm:mt-20 md:mt-24 lg:mt-32 z-30 mb-12 sm:mb-16 lg:mb-20">
+                <section ref={statsRef} className="container mx-auto px-4 sm:px-6 lg:px-8 relative mt-16 sm:mt-20 md:mt-24 lg:mt-32 z-30 mb-12 sm:mb-16 lg:mb-20">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                         {[
-                            { label: 'Global Alumni', value: '5,000+', icon: <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /> },
-                            { label: 'Rank in TNEA', value: '7th', icon: <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /> },
-                            { label: 'Of Excellence', value: '20+ Years', icon: <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /> },
-                            { label: 'Placement Record', value: '100%', icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> }
+                            { label: 'Global Alumni', value: '5,000+', animatedValue: counts.alumni, suffix: '+', icon: <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /> },
+                            { label: 'Rank in TNEA', value: '7th', animatedValue: counts.rank, suffix: 'th', icon: <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /> },
+                            { label: 'Of Excellence', value: '20+ Years', animatedValue: counts.years, suffix: '+ Years', icon: <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /> },
+                            { label: 'Placement Record', value: '100%', animatedValue: counts.placement, suffix: '%', icon: <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> }
                         ].map((stat, idx) => (
                             <div key={idx} className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 sm:p-8 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl min-h-[200px] flex flex-col justify-center items-center">
-                                <div className="text-blue-600 mb-4 sm:mb-6">
+                                <div className="text-[rgb(115,40,40)] mb-4 sm:mb-6">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         {stat.icon}
                                     </svg>
                                 </div>
-                                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3">{stat.value}</div>
+                                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 sm:mb-3">
+                                    {stat.animatedValue.toLocaleString()}{stat.suffix}
+                                </div>
                                 <div className="text-sm sm:text-base lg:text-lg text-gray-600 font-medium">{stat.label}</div>
                             </div>
                         ))}
@@ -239,24 +310,27 @@ const HomeView = () => {
 
                 {/* About Section */}
                 <section id="about" className="container mx-auto px-4 sm:px-8 lg:px-14 relative py-12 sm:py-16 lg:py-20 overflow-hidden">
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-10">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="dots-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <circle cx="2" cy="2" r="1" fill="#2563eb" />
-                                <circle cx="20" cy="20" r="1" fill="#2563eb" />
-                                <circle cx="38" cy="38" r="1" fill="#2563eb" />
+                                <circle cx="2" cy="2" r="1" fill="currentColor" />
+                                <circle cx="20" cy="20" r="1" fill="currentColor" />
+                                <circle cx="38" cy="38" r="1" fill="currentColor" />
+                                <circle cx="2" cy="38" r="1" fill="currentColor" />
+                                <circle cx="38" cy="2" r="1" fill="currentColor" />
                             </pattern>
                             <rect width="100%" height="100%" fill="url(#dots-pattern)" />
                         </svg>
                     </div>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
-                            <div className="lg:col-span-8 space-y-10">
-                                <h2 className="text-2xl sm:text-3xl font-bold text-blue-900 relative inline-block group">
+                        {/* Row 1: About Description + Featured Image */}
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12 sm:mb-16">
+                            <div className="lg:col-span-7 space-y-8">
+                                <h2 className="text-2xl sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                                     ABOUT OUR CAMPUS
                                     <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-32 sm:w-40 lg:w-52 bg-yellow-500"></span>
                                 </h2>
-                                <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-blue-200 p-6 sm:p-8">
+                                <div className="bg-white/80 backdrop-blur-sm shadow-xl border border-[rgb(180,100,100)] p-6 sm:p-8 rounded-xl">
                                     <p className="text-base text-gray-700 leading-relaxed">
                                         The Regional Campus Coimbatore of Anna University, established in 2012, offers world-class education in Engineering and Technology. Nestled in a serene environment away from the city's hustle, our campus boasts state-of-the-art infrastructure and a team of highly qualified faculty members dedicated to academic excellence.
                                     </p>
@@ -264,92 +338,80 @@ const HomeView = () => {
                                         Our university is committed to holistic education with a focus on innovation, research, and industry collaboration. We provide an engaging learning environment where students can develop their technical skills, critical thinking abilities, and leadership qualities needed to excel in their chosen fields.
                                     </p>
                                 </div>
-                                <div className="mobile-grid">
-                                    {/* News Card */}
-                                    <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-blue-200">
-                                        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
-                                            <h3 className="text-lg font-semibold text-white">News & Admissions</h3>
-                                            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                                                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
-                                            </div>
-                                        </div>
-                                        <div className="p-8 max-h-[300px] overflow-hidden">
-                                            <ul className="news-scroll w-full divide-y divide-gray-100">
-                                                {news.map((item, idx) => (
-                                                    <li key={idx} className="flex font-bold items-center py-3 px-6 hover:bg-blue-50 transition-colors duration-200 group cursor-pointer">
-                                                        <div className="mr-3 flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                                                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out">{item.name}</a>
-                                                    </li>
-                                                ))}
-                                                <li className="flex items-center py-3 px-6 text-blue-600 font-medium group cursor-pointer hover:bg-blue-50">
-                                                    <Link to="/news" className="flex items-center transform group-hover:translate-x-1 transition-transform duration-300">
-                                                        View All Announcements
-                                                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    {/* Events Card */}
-                                    <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-blue-200">
-                                        <div className="bg-gradient-to-r from-indigo-600 to-blue-600 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
-                                            <h3 className="text-lg font-semibold text-white">Events & Scholarships</h3>
-                                            <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                                                <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                            </div>
-                                        </div>
-                                        <div className="p-8 max-h-[300px] overflow-hidden">
-                                            <ul className="events-scroll w-full divide-y divide-gray-100">
-                                                {events.map((item, idx) => (
-                                                    <li key={idx} className="flex font-bold items-center py-3 px-6 hover:bg-blue-50 transition-colors duration-200 group cursor-pointer">
-                                                        <div className="mr-3 flex-shrink-0 w-2 h-2 bg-indigo-500 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
-                                                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out">{item.name}</a>
-                                                    </li>
-                                                ))}
-                                                <li className="flex items-center py-3 px-6 text-indigo-600 font-medium group cursor-pointer hover:bg-blue-50">
-                                                    <Link to="/events" className="flex items-center transform group-hover:translate-x-1 transition-transform duration-300">
-                                                        View All Events
-                                                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-                                                    </Link>
-                                                </li>
-                                            </ul>
-                                        </div>
+                            </div>
+                            <div className="lg:col-span-5">
+                                <div className="relative group overflow-hidden rounded-2xl shadow-2xl border-4 border-white/50 transform hover:scale-[1.02] transition-all duration-500 hover:shadow-[0_0_30px_rgba(115,25,25,0.3)]">
+                                    <img
+                                        src="/Drone_shot.jpg"
+                                        alt="Campus Aerial View"
+                                        className="w-full h-[300px] sm:h-[400px] object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[rgb(115,25,25)]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                                        <p className="text-white font-black text-sm uppercase tracking-widest">Our Sprawling Campus</p>
                                     </div>
                                 </div>
                             </div>
-                            {/* Quick Links */}
-                            <div className="lg:col-span-4">
-                                <div className="bg-gradient-to-br from-blue-900 to-indigo-900 backdrop-blur-md rounded-xl shadow-xl p-6 sticky">
-                                    <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 pb-2 sm:pb-3 border-b border-white/20 flex items-center">
-                                        <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-                                        Quick Links
-                                    </h3>
-                                    <div className="space-y-3">
-                                        {[
-                                            { to: '/aicte&moe', label: 'AICTE & MOE CELL', color: 'bg-blue-500/20', icon: <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path> },
-                                            { href: 'https://drive.google.com/file/d/1z8ioKdQN0-fvahtIfneCPJI6i7j-YaFz/view', label: 'MANDATORY DISCLOSURE', color: 'bg-indigo-500/20', icon: <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path> },
-                                            { to: '/downloads', label: 'DOWNLOADS', color: 'bg-green-500/20', icon: <><path d="M12 20h9"></path><path d="M12 4v16m0 0l-4-4m4 4l4-4"></path></> },
-                                            { to: '/antiragging', label: 'ANTIRAGGING CELL', color: 'bg-red-500/20', icon: <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path> },
-                                            { to: '/posh', label: 'POSH CELL', color: 'bg-pink-500/20', icon: <><circle cx="12" cy="12" r="10"></circle><path d="M8 15s1.5-2 4-2 4 2 4 2"></path><path d="M9 9h.01"></path><path d="M15 9h.01"></path></> },
-                                        ].map((link, idx) => (
-                                            <div key={idx} className="group">
-                                                {link.to ? (
-                                                    <Link to={link.to} className="bg-white/10 hover:bg-white/20 rounded-lg p-3 sm:p-4 flex items-center space-x-2 sm:space-x-3 transition-all duration-300 transform hover:translate-x-2 cursor-pointer">
-                                                        <div className={`${link.color} p-1.5 sm:p-2 rounded-full`}>
-                                                            <svg className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">{link.icon}</svg>
-                                                        </div>
-                                                        <h3 className="text-base lg:text-lg text-white font-medium">{link.label}</h3>
-                                                    </Link>
-                                                ) : (
-                                                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 rounded-lg p-3 sm:p-4 flex items-center space-x-2 sm:space-x-3 transition-all duration-300 transform hover:translate-x-2 cursor-pointer">
-                                                        <div className={`${link.color} p-1.5 sm:p-2 rounded-full`}>
-                                                            <svg className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">{link.icon}</svg>
-                                                        </div>
-                                                        <h3 className="text-base lg:text-lg text-white font-medium">{link.label}</h3>
-                                                    </a>
-                                                )}
-                                            </div>
-                                        ))}
+                        </div>
+
+                        {/* Row 2: News & Events (Full Width) */}
+                        <div className="w-full">
+                            <div className="mobile-grid relative">
+                                <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+                                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                        <pattern id="triangle-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                                            <path d="M0 60 L30 0 L60 60 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                                        </pattern>
+                                        <rect width="100%" height="100%" fill="url(#triangle-pattern)" />
+                                    </svg>
+                                </div>
+                                {/* News Card */}
+                                <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
+                                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
+                                        <h3 className="text-lg font-semibold text-white">News & Admissions</h3>
+                                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 max-h-[300px] overflow-hidden">
+                                        <ul className="news-scroll w-full divide-y divide-gray-100">
+                                            {news.map((item, idx) => (
+                                                <li key={idx} className="flex font-bold items-center py-3 px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer">
+                                                    <div className="mr-3 flex-shrink-0 w-2 h-2 bg-[rgb(220,140,140)]0 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                                                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out">{item.name}</a>
+                                                </li>
+                                            ))}
+                                            <li className="flex items-center py-3 px-6 text-[rgb(115,40,40)] font-medium group cursor-pointer hover:bg-[rgb(220,140,140)]">
+                                                <Link to="/news" className="flex items-center transform group-hover:translate-x-1 transition-transform duration-300">
+                                                    View All Announcements
+                                                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                {/* Events Card */}
+                                <div className="rounded-lg bg-white/80 backdrop-blur-sm shadow-lg overflow-hidden border border-[rgb(180,100,100)]">
+                                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
+                                        <h3 className="text-lg font-semibold text-white">Events & Scholarships</h3>
+                                        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                                            <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                        </div>
+                                    </div>
+                                    <div className="p-8 max-h-[300px] overflow-hidden">
+                                        <ul className="events-scroll w-full divide-y divide-gray-100">
+                                            {events.map((item, idx) => (
+                                                <li key={idx} className="flex font-bold items-center py-3 px-6 hover:bg-[rgb(220,140,140)] transition-colors duration-200 group cursor-pointer">
+                                                    <div className="mr-3 flex-shrink-0 w-2 h-2 bg-[rgb(220,140,140)]0 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
+                                                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300 ease-out">{item.name}</a>
+                                                </li>
+                                            ))}
+                                            <li className="flex items-center py-3 px-6 text-[rgb(115,40,40)] font-medium group cursor-pointer hover:bg-[rgb(220,140,140)]">
+                                                <Link to="/events" className="flex items-center transform group-hover:translate-x-1 transition-transform duration-300">
+                                                    View All Events
+                                                    <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+                                                </Link>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -357,10 +419,20 @@ const HomeView = () => {
                     </div>
                 </section>
 
+                <QuickLinksSidebar />
+
                 {/* Programs Offered Showcase */}
-                <section id="programs" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-blue-50/50 relative">
+                <section id="programs" className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <pattern id="hexagon-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+                                <path d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                            </pattern>
+                            <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
+                        </svg>
+                    </div>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[#21209c] relative inline-block mx-auto">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
                             PROGRAMS OFFERED
                             <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
                         </h2>
@@ -368,20 +440,20 @@ const HomeView = () => {
                             <div className="overflow-x-auto scrollbar-hide">
                                 <div className="flex space-x-6 py-4 w-max">
                                     {[
-                                        { title: 'B.E. (COMPUTER SCIENCE AND ENGINEERING)', icon: '💻', color: 'bg-blue-500', url: '/departments/cse' },
+                                        { title: 'B.E. (COMPUTER SCIENCE AND ENGINEERING)', icon: '💻', color: 'bg-[rgb(220,140,140)]0', url: '/departments/cse' },
                                         { title: 'B.E. (ELECTRONICS AND COMMUNICATION ENGINEERING)', icon: '📡', color: 'bg-green-500', url: '/departments/ece' },
                                         { title: 'B.E. (ELECTRICAL AND ELECTRONICS ENGINEERING)', icon: '⚡', color: 'bg-yellow-500', url: '/departments/eee' },
                                         { title: 'B.E. (MECHANICAL ENGINEERING)', icon: '🛠️', color: 'bg-red-500', url: '/departments/mech' },
                                         { title: 'B.Tech. (ARTIFICIAL INTELLIGENCE AND DATA SCIENCE)', icon: '🤖', color: 'bg-purple-500', url: '/departments/cse' },
                                         { title: 'B.E. ELECTRONICS ENGINEERING (VLSI DESIGN AND TECHNOLOGY)', icon: '🔲', color: 'bg-pink-500', url: '/departments/ece' },
-                                        { title: 'MASTER OF BUSINESS ADMINISTRATION', icon: '📈', color: 'bg-indigo-500', url: '/departments/mba' },
-                                        { title: 'MASTER OF BUSINESS ADMINISTRATION (BUSINESS ANALYTICS)', icon: '📊', color: 'bg-indigo-400', url: '/departments/mba' },
+                                        { title: 'MASTER OF BUSINESS ADMINISTRATION', icon: '📈', color: 'bg-[rgb(220,140,140)]0', url: '/departments/mba' },
+                                        { title: 'MASTER OF BUSINESS ADMINISTRATION (BUSINESS ANALYTICS)', icon: '📊', color: 'bg-[rgb(140,60,60)]', url: '/departments/mba' },
                                     ].map((prog, idx) => (
                                         <div key={idx} className="bg-white rounded-xl p-8 shadow-lg transform hover:-translate-y-2 transition-all duration-300 w-72">
                                             <div className={`p-4 rounded-full text-white inline-block mb-6 h-14 w-14 flex items-center justify-center text-2xl ${prog.color}`}>{prog.icon}</div>
                                             <h3 className="text-xl font-bold text-gray-900 mb-4">{prog.title}</h3>
                                             <p className="text-gray-600 mb-6 h-20">Explore opportunities in {prog.title.toLowerCase()}.</p>
-                                            <Link to={prog.url} className="text-blue-500 font-semibold hover:text-blue-700 transition-colors">Learn More →</Link>
+                                            <Link to={prog.url} className="text-[rgb(120,45,45)] font-semibold hover:text-[rgb(110,35,35)] transition-colors">Learn More →</Link>
                                         </div>
                                     ))}
                                 </div>
@@ -391,7 +463,15 @@ const HomeView = () => {
                 </section>
 
                 {/* Dean's Message */}
-                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-blue-900 to-indigo-900 text-white relative">
+                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white relative overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <pattern id="wave-pattern" width="100" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M0 10 Q 12.5 0, 25 10 T 50 10 T 75 10 T 100 10" fill="none" stroke="currentColor" strokeWidth="1" />
+                            </pattern>
+                            <rect width="100%" height="100%" fill="url(#wave-pattern)" />
+                        </svg>
+                    </div>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-8 sm:mb-12">From the Dean's Desk</h2>
                         <div className="flex flex-col md:flex-row items-center bg-white bg-opacity-10 rounded-lg shadow-xl overflow-hidden backdrop-filter backdrop-blur-lg max-w-6xl mx-auto">
@@ -400,7 +480,7 @@ const HomeView = () => {
                             </div>
                             <div className="md:w-2/3 p-4 sm:p-6 md:p-8">
                                 <h3 className="text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">Dr. Saravanan Kumar</h3>
-                                <p className="text-base text-indigo-200 mb-4 sm:mb-6 italic">"Empowering the next generation of innovators and leaders."</p>
+                                <p className="text-base text-[rgb(180,100,100)] mb-4 sm:mb-6 italic">"Empowering the next generation of innovators and leaders."</p>
                                 <p className="text-base mb-3 sm:mb-4">
                                     Welcome to Anna University! Our institution stands at the forefront of technological education and research. We are dedicated to academic excellence and nurturing visionary leaders.
                                 </p>
@@ -411,14 +491,23 @@ const HomeView = () => {
 
                 {/* Gallery Section */}
                 <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden w-full relative">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <pattern id="circle-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" strokeWidth="1" />
+                                <circle cx="30" cy="30" r="5" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                            </pattern>
+                            <rect width="100%" height="100%" fill="url(#circle-pattern)" />
+                        </svg>
+                    </div>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[#21209c] relative inline-block mx-auto">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
                             Gallery of Memories
                             <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
                         </h2>
                         <div className="relative flex items-center justify-center">
-                            <button onClick={prevImage} className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[#21209c]/80 text-white p-3 rounded-full z-30 shadow-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                            <button onClick={prevImage} className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
                             </button>
                             <div className="w-full md:w-3/4 lg:w-3/5" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                                 <div className="flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}>
@@ -434,22 +523,31 @@ const HomeView = () => {
                                     ))}
                                 </div>
                             </div>
-                            <button onClick={nextImage} className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-[#21209c]/80 text-white p-3 rounded-full z-30 shadow-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                            <button onClick={nextImage} className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full z-30 shadow-lg group">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
                             </button>
                         </div>
                         <div className="flex justify-center mt-8 space-x-2">
                             {galleryImages.map((_, idx) => (
-                                <button key={idx} onClick={() => goToImage(idx)} className={`h-1 w-4 md:w-8 rounded-full transition-colors ${idx === currentImageIndex ? 'bg-indigo-600' : 'bg-indigo-300'}`}></button>
+                                <button key={idx} onClick={() => goToImage(idx)} className={`h-1 w-4 md:w-8 rounded-full transition-colors ${idx === currentImageIndex ? 'bg-[rgb(115,40,40)]' : 'bg-[rgb(160,80,80)]'}`}></button>
                             ))}
                         </div>
                     </div>
                 </section>
 
                 {/* Alumni Testimonials */}
-                <section id="alumni" className="py-12 sm:py-16 lg:py-24 bg-gray-50 relative">
+                <section id="alumni" className="py-12 sm:py-16 lg:py-24 bg-gray-50 relative overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <pattern id="zigzag-pattern" width="100" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M0 0 L20 10 L0 20 L20 30 L0 40 L20 50 L0 60 L20 70 L0 80" fill="none" stroke="currentColor" strokeWidth="1" />
+                                <path d="M50 0 L70 10 L50 20 L70 30 L50 40 L70 50 L50 60 L70 70 L50 80" fill="none" stroke="currentColor" strokeWidth="1" />
+                            </pattern>
+                            <rect width="100%" height="100%" fill="url(#zigzag-pattern)" />
+                        </svg>
+                    </div>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[#21209c] relative inline-block mx-auto">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-auto">
                             ALUMNI SPEAK
                             <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
                         </h2>
@@ -459,14 +557,14 @@ const HomeView = () => {
                                     {testimonials.map((testimonial, idx) => (
                                         <div key={idx} className="flex-shrink-0 w-full">
                                             <div className="bg-white rounded-xl shadow-xl overflow-hidden max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 text-left">
-                                                <div className="md:col-span-1 bg-gradient-to-br from-blue-600 to-indigo-900 p-8 flex flex-col items-center justify-center">
+                                                <div className="md:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
                                                     <img src={testimonial.image} alt={testimonial.name} className="w-32 h-32 rounded-full border-4 border-white mb-4 object-cover" />
                                                     <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
-                                                    <p className="text-blue-200">{testimonial.branch} | {testimonial.batch}</p>
+                                                    <p className="text-[rgb(180,100,100)]">{testimonial.branch} | {testimonial.batch}</p>
                                                     <p className="text-white font-semibold mt-2 text-center text-sm">Placed in <span className="text-yellow-300">{testimonial.company}</span></p>
                                                 </div>
                                                 <div className="md:col-span-2 p-8 flex flex-col justify-center">
-                                                    <svg className="w-12 h-12 text-blue-100 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                                                    <svg className="w-12 h-12 text-[rgb(200,120,120)] mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
                                                     <p className="text-gray-700 leading-relaxed mb-6">{testimonial.message}</p>
                                                 </div>
                                             </div>
@@ -474,8 +572,8 @@ const HomeView = () => {
                                     ))}
                                 </div>
                             </div>
-                            <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[#21209c]/80 text-white p-3 rounded-full shadow-lg"><svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></button>
-                            <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[#21209c]/80 text-white p-3 rounded-full shadow-lg"><svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg></button>
+                            <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group"><svg className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></button>
+                            <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group"><svg className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg></button>
                         </div>
                     </div>
                 </section>
@@ -484,13 +582,13 @@ const HomeView = () => {
                 <button onClick={() => document.getElementById('my_modal_5').showModal()} className="fixed bottom-4 right-4 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-4 rounded-full shadow-lg z-50">💬 Help Desk</button>
                 <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                     <div className="modal-box p-0 w-80 shadow-lg rounded-lg fixed bottom-20 right-4 md:right-10">
-                        <div className="flex justify-between items-center bg-blue-600 p-4 text-white rounded-t-lg">
+                        <div className="flex justify-between items-center bg-[rgb(115,40,40)] p-4 text-white rounded-t-lg">
                             <h2 className="text-lg font-semibold">Support Chatbot</h2>
                             <form method="dialog"><button className="btn btn-sm btn-circle btn-ghost">✕</button></form>
                         </div>
                         <div className="p-4 h-64 overflow-y-auto bg-gray-50 flex flex-col" ref={chatContainerRef}>
                             {chatLog.map((chat, idx) => (
-                                <div key={idx} className={`mb-4 max-w-[80%] p-3 rounded-xl shadow-sm text-sm ${chat.sender === 'user' ? 'self-end bg-blue-100 text-blue-900 rounded-br-none' : 'self-start bg-white text-gray-800 rounded-bl-none border border-gray-100'}`}>
+                                <div key={idx} className={`mb-4 max-w-[80%] p-3 rounded-xl shadow-sm text-sm ${chat.sender === 'user' ? 'self-end bg-[rgb(200,120,120)] text-[rgb(100,25,25)] rounded-br-none' : 'self-start bg-white text-gray-800 rounded-bl-none border border-gray-100'}`}>
                                     {chat.message}
                                 </div>
                             ))}

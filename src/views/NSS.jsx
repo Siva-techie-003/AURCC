@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import data from '../assets/NSS.json';
 import './NSS.css';
 
@@ -35,7 +35,7 @@ const NSS = () => {
                 <div className="max-w-7xl mx-auto flex flex-col gap-8 sm:gap-10 lg:gap-12">
                     {/* About Card */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
-                        <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
                             <span className="text-lg sm:text-xl lg:text-2xl">ℹ️</span>
                             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">About</h2>
                         </div>
@@ -46,18 +46,18 @@ const NSS = () => {
 
                     {/* Activities Card with Sliding Notice Board */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
-                        <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
                             <span className="text-lg sm:text-xl lg:text-2xl">🏅</span>
                             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Activities</h2>
                         </div>
                         <div className="p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col items-center">
                             <div className="relative w-full max-w-xl mx-auto">
-                                <div className="overflow-hidden h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl bg-blue-50 border border-blue-100 shadow-inner flex items-center justify-center">
+                                <div className="overflow-hidden h-20 sm:h-24 md:h-28 lg:h-32 rounded-xl bg-[rgb(220,140,140)] border border-[rgb(200,120,120)] shadow-inner flex items-center justify-center">
                                     <div className="relative w-full h-full">
                                         {(Array.isArray(data?.activities) ? data.activities : []).map((activity, idx) => (
                                             <div
                                                 key={idx}
-                                                className={`absolute inset-0 flex items-center justify-center px-6 text-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-blue-900 transition-all duration-700 transform ${currentActivityIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+                                                className={`absolute inset-0 flex items-center justify-center px-6 text-center text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(100,25,25)] transition-all duration-700 transform ${currentActivityIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
                                                     }`}
                                             >
                                                 {activity}
@@ -70,7 +70,7 @@ const NSS = () => {
                                         <button
                                             key={idx}
                                             onClick={() => setActivity(idx)}
-                                            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${currentActivityIndex === idx ? 'bg-blue-700 w-6' : 'bg-blue-200 hover:bg-blue-300'
+                                            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${currentActivityIndex === idx ? 'bg-[rgb(110,35,35)] w-6' : 'bg-[rgb(180,100,100)] hover:bg-[rgb(160,80,80)]'
                                                 }`}
                                         ></button>
                                     ))}
@@ -81,7 +81,7 @@ const NSS = () => {
 
                     {/* NSS Coordinators Card */}
                     <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg animate-fadeIn border border-gray-100 overflow-hidden">
-                        <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                        <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 md:py-5 flex items-center justify-center gap-2 sm:gap-3">
                             <span className="text-lg sm:text-xl lg:text-2xl">👥</span>
                             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">NSS Coordinators</h2>
                         </div>
@@ -92,7 +92,7 @@ const NSS = () => {
                                         key={i}
                                         className="bg-white/80 rounded-xl shadow-sm p-6 border border-gray-100 flex flex-col justify-center items-center text-center hover:shadow-md transition-all hover:-translate-y-1"
                                     >
-                                        <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-indigo-700 mb-2">{coordinator.Name}</h3>
+                                        <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[rgb(110,35,35)] mb-2">{coordinator.Name}</h3>
                                         <div className="text-xs lg:text-sm text-gray-700 font-semibold">{coordinator.Designation}</div>
                                     </div>
                                 ))}

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import './About.css';
 
 const About = () => {
@@ -30,7 +30,7 @@ const About = () => {
                 </div>
                 <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Tech Hero" className="absolute inset-0 w-full h-full object-cover object-center -z-10" />
                 <div className="absolute inset-0 -z-10 bg-black opacity-70"></div>
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-900/80 via-indigo-700/60 to-purple-800/70"></div>
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[rgb(115,63,63)]/80 via-[rgb(115,45,45)]/60 to-purple-800/70"></div>
                 <div className="relative z-20 px-4 w-full max-w-2xl mx-auto animate-fade-in text-center">
                     <h1 className="text-2xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight relative" style={{ textShadow: '0 4px 16px #000, 0 1px 2px #000' }}>
                         Website <span style={{ color: '#fff', textShadow: '0 4px 16px #000' }}>Development Team</span>
@@ -44,7 +44,7 @@ const About = () => {
             <section className="py-8 sm:py-12 lg:py-16 px-4 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
                     <div className="mb-8 sm:mb-12">
-                        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-blue-900 relative inline-block group">
+                        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                             OUR TEAM
                             <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-yellow-500 transform origin-left transition-transform duration-300 group-hover:scale-x-110"></span>
                         </h2>
@@ -54,10 +54,10 @@ const About = () => {
                         {teamMembers.map((member) => (
                             <div
                                 key={member.name}
-                                className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100 transform hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                                className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform hover:translate-y-[-5px] hover:shadow-xl transition-all duration-300 flex flex-col h-full"
                             >
                                 <div className="relative pt-6 sm:pt-8 pb-3 sm:pb-4 flex justify-center">
-                                    <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+                                    <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                                     <div className="relative">
                                         <img
                                             src={`/${member.photo}`}
@@ -69,7 +69,7 @@ const About = () => {
 
                                 <div className="p-4 sm:p-6 text-center flex-1 flex flex-col justify-between">
                                     <div>
-                                        <h3 className="text-lg lg:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-2">
+                                        <h3 className="text-lg lg:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] mb-2">
                                             {member.name}
                                         </h3>
                                         <p className="text-sm lg:text-base text-gray-600">{member.department}</p>
@@ -77,7 +77,7 @@ const About = () => {
 
                                     <div className="flex justify-center space-x-2 sm:space-x-3 mt-3 sm:mt-4">
                                         {member.linkedin && (
-                                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                                            <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-[rgb(115,40,40)] hover:text-[rgb(105,30,30)] transition-colors duration-300">
                                                 <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
                                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                                 </svg>
@@ -102,25 +102,25 @@ const About = () => {
             <section className="py-8 sm:py-12 lg:py-16 px-4 bg-white text-center">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
                     <div className="mb-8 sm:mb-12">
-                        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-blue-900 relative inline-block group">
+                        <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                             DEVELOPMENT PROCESS
                             <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-yellow-500 transform origin-left transition-transform duration-300 group-hover:scale-x-110"></span>
                         </h2>
                     </div>
 
                     <div className="relative">
-                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"></div>
+                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[rgb(200,120,120)]"></div>
                         <div className="grid grid-cols-1 gap-12">
                             {[
-                                { step: 1, title: 'Planning & Design', color: 'bg-blue-600', gradient: 'from-blue-600 to-indigo-600', description: 'We started by analyzing user needs and planning the website architecture. Our designers created wireframes and mockups to visualize the modern interface.' },
-                                { step: 2, title: 'Development', color: 'bg-indigo-600', gradient: 'from-indigo-600 to-blue-600', description: 'Using React and Tailwind CSS, we built a responsive and modern website with attention to performance and user experience. We implemented component-based architecture for maintainability.' },
-                                { step: 3, title: 'Testing & Deployment', color: 'bg-blue-600', gradient: 'from-blue-600 to-indigo-600', description: 'Rigorous testing was performed across different devices and browsers to ensure compatibility. The website was then deployed with continuous integration for easy updates.' },
+                                { step: 1, title: 'Planning & Design', color: 'bg-[rgb(115,40,40)]', gradient: 'from-[rgb(115,63,63)] to-[rgb(115,25,25)]', description: 'We started by analyzing user needs and planning the website architecture. Our designers created wireframes and mockups to visualize the modern interface.' },
+                                { step: 2, title: 'Development', color: 'bg-[rgb(115,40,40)]', gradient: 'from-[rgb(115,63,63)] to-[rgb(115,25,25)]', description: 'Using React and Tailwind CSS, we built a responsive and modern website with attention to performance and user experience. We implemented component-based architecture for maintainability.' },
+                                { step: 3, title: 'Testing & Deployment', color: 'bg-[rgb(115,40,40)]', gradient: 'from-[rgb(115,63,63)] to-[rgb(115,25,25)]', description: 'Rigorous testing was performed across different devices and browsers to ensure compatibility. The website was then deployed with continuous integration for easy updates.' },
                             ].map((process) => (
                                 <div key={process.step} className="relative text-center">
                                     <div className="flex items-center justify-center mb-4 text-center">
                                         <div className={`z-10 flex items-center justify-center w-12 h-12 ${process.color} rounded-full text-white font-bold text-lg`}>{process.step}</div>
                                     </div>
-                                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-100 max-w-xl mx-auto">
+                                    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] max-w-xl mx-auto">
                                         <div className={`bg-gradient-to-r ${process.gradient} py-3 px-6`}>
                                             <h3 className="text-lg font-semibold text-white">{process.title}</h3>
                                         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import data from '../assets/EstateOff.json';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
@@ -59,10 +59,10 @@ const EstateOffice = () => {
                         {serviceCards.map((service, index) => (
                             <div
                                 key={index}
-                                className="service-card bg-white/70 backdrop-blur rounded-2xl shadow-sm border border-blue-50 flex flex-col items-center text-center p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-blue-400 group"
+                                className="service-card bg-white/70 backdrop-blur rounded-2xl shadow-sm border border-[rgb(220,140,140)] flex flex-col items-center text-center p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[rgb(140,60,60)] group"
                             >
                                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                                <h3 className="font-bold text-sm lg:text-base xl:text-lg text-blue-900 mb-2 leading-snug">{service.title}</h3>
+                                <h3 className="font-bold text-sm lg:text-base xl:text-lg text-[rgb(100,25,25)] mb-2 leading-snug">{service.title}</h3>
                                 <p className="text-xs lg:text-sm text-gray-600 line-clamp-3">{service.desc}</p>
                             </div>
                         ))}

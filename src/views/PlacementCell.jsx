@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import data from '../assets/placement-cell.json';
 import OfficePageTemplate from '../components/OfficePageTemplate';
 import OfficeContentSection from '../components/OfficeContentSection';
@@ -38,7 +38,7 @@ const PlacementCell = () => {
                 >
                     <div className="text-left">
                         <p className="text-base lg:text-lg leading-relaxed text-gray-800 mb-6">
-                            <span className="font-bold text-blue-900">The Placement Cell</span> at our Regional Campus is dedicated to empowering students for career success. We provide comprehensive support for every stage of your journey.
+                            <span className="font-bold text-[rgb(100,25,25)]">The Placement Cell</span> at our Regional Campus is dedicated to empowering students for career success. We provide comprehensive support for every stage of your journey.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                             {[
@@ -48,8 +48,8 @@ const PlacementCell = () => {
                                 { title: 'Industry Connections', desc: 'Strong ties with top recruiters and regular campus drives.' },
                                 { title: 'Career Awareness', desc: 'Information on value-added courses and opportunities in private and government sectors.' }
                             ].map((item, i) => (
-                                <div key={i} className="flex gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
-                                    <span className="text-blue-500 font-bold">✔</span>
+                                <div key={i} className="flex gap-3 p-4 bg-[rgb(220,140,140)]/50 rounded-xl border border-[rgb(200,120,120)]">
+                                    <span className="text-[rgb(120,45,45)] font-bold">✔</span>
                                     <div>
                                         <span className="font-bold text-gray-900 block">{item.title}</span>
                                         <span className="text-sm text-gray-700">{item.desc}</span>
@@ -57,7 +57,7 @@ const PlacementCell = () => {
                                 </div>
                             ))}
                         </div>
-                        <p className="text-base lg:text-lg text-indigo-700 font-bold border-l-4 border-l-indigo-500 pl-4 py-2 bg-indigo-50/30 rounded-r-lg">
+                        <p className="text-base lg:text-lg text-[rgb(110,35,35)] font-bold border-l-4 border-l-[rgb(120,45,45)] pl-4 py-2 bg-[rgb(220,140,140)]/30 rounded-r-lg">
                             Our mission: To help every student achieve their dream job and build a successful career.
                         </p>
                     </div>
@@ -71,7 +71,7 @@ const PlacementCell = () => {
                 >
                     <div className="flex flex-col items-center">
                         <div className="text-base lg:text-lg text-gray-700 mb-8 text-center max-w-2xl font-medium">
-                            <span className="font-bold text-blue-900">Our Results Speak for Themselves:</span> Each year, our students receive numerous placement offers from leading companies.
+                            <span className="font-bold text-[rgb(100,25,25)]">Our Results Speak for Themselves:</span> Each year, our students receive numerous placement offers from leading companies.
                         </div>
                         <img src="/placement statistics.webp" alt="Placement Statistics" className="w-full max-w-4xl mx-auto h-auto rounded-2xl shadow-xl border border-gray-100" />
                     </div>
@@ -84,9 +84,9 @@ const PlacementCell = () => {
                     icon="🤝"
                 >
                     <div className="text-left">
-                        <div className="bg-indigo-900 text-white p-6 rounded-2xl mb-8 shadow-md">
+                        <div className="bg-[rgb(100,25,25)] text-white p-6 rounded-2xl mb-8 shadow-md">
                             <p className="text-lg lg:text-xl font-bold mb-2">The Centre for University-Industry Collaboration (CUIC)</p>
-                            <p className="text-indigo-100 opacity-90">Bridges the gap between students and leading employers through specialized initiatives.</p>
+                            <p className="text-[rgb(200,120,120)] opacity-90">Bridges the gap between students and leading employers through specialized initiatives.</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                             {[
@@ -95,10 +95,10 @@ const PlacementCell = () => {
                                 { title: 'Placement Drives', desc: 'Regular campus recruitment events.' },
                                 { title: 'Career Guidance', desc: 'Expert advice for informed career choices.' }
                             ].map((item, i) => (
-                                <div key={i} className="p-4 bg-white rounded-xl border border-indigo-100 shadow-sm flex items-start gap-3">
-                                    <span className="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">{i + 1}</span>
+                                <div key={i} className="p-4 bg-white rounded-xl border border-[rgb(200,120,120)] shadow-sm flex items-start gap-3">
+                                    <span className="bg-[rgb(200,120,120)] text-[rgb(110,35,35)] w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">{i + 1}</span>
                                     <div>
-                                        <span className="font-bold text-indigo-900 block mb-1">{item.title}</span>
+                                        <span className="font-bold text-[rgb(100,25,25)] block mb-1">{item.title}</span>
                                         <span className="text-sm text-gray-700">{item.desc}</span>
                                     </div>
                                 </div>

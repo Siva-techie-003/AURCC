@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import vcMessageData from '../assets/vcMessage.json';
 import './VC.css';
 
@@ -49,24 +49,24 @@ const VC = () => {
         ));
 
     return (
-        <main className="min-h-screen flex justify-center items-center bg-gradient-to-br from-indigo-100 via-blue-50 to-white py-12 px-4 font-serif text-left">
-            <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl max-w-5xl w-full border border-blue-100 flex flex-col md:flex-row gap-10 animate-scale-in">
+        <main className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white py-12 px-4 font-serif text-left">
+            <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl max-w-5xl w-full border border-[rgb(200,120,120)] flex flex-col md:flex-row gap-10 animate-scale-in">
                 {/* Profile Sidebar */}
                 <div className="md:w-1/3 flex flex-col items-center">
                     <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <div className="absolute -inset-1 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                         <img
                             src="/velraj.webp"
                             alt="Vice-Chancellor's Photo"
                             className="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 group-hover:scale-[1.02]"
                         />
                     </div>
-                    <h2 className="mt-6 font-black text-2xl lg:text-3xl text-indigo-900 text-center uppercase tracking-tight">{viceChancellor.name}</h2>
-                    <div className="h-1 w-12 bg-blue-500 rounded-full my-3"></div>
+                    <h2 className="mt-6 font-black text-2xl lg:text-3xl text-[rgb(100,25,25)] text-center uppercase tracking-tight">{viceChancellor.name}</h2>
+                    <div className="h-1 w-12 bg-[rgb(220,140,140)]0 rounded-full my-3"></div>
                     <p className="text-gray-500 font-bold uppercase tracking-widest text-xs lg:text-sm text-center">Vice-Chancellor</p>
                     <button
                         onClick={() => setShowPopover(true)}
-                        className="mt-6 px-8 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center gap-2"
+                        className="mt-6 px-8 py-3 bg-[rgb(115,40,40)] text-white rounded-full font-bold hover:bg-[rgb(110,35,35)] transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center gap-2"
                     >
                         <span>📜</span> View Full Profile
                     </button>
@@ -74,16 +74,16 @@ const VC = () => {
 
                 {/* Message Content */}
                 <div className="flex-grow">
-                    <h1 className="text-2xl lg:text-3xl xl:text-4xl font-black text-indigo-900 mb-6 drop-shadow-sm leading-tight border-b-2 border-indigo-50 pb-4">
+                    <h1 className="text-2xl lg:text-3xl xl:text-4xl font-black text-[rgb(100,25,25)] mb-6 drop-shadow-sm leading-tight border-b-2 border-[rgb(220,140,140)] pb-4">
                         {vcMessage.title}
                     </h1>
-                    <h2 className="text-xl lg:text-2xl font-bold text-indigo-700 mb-8 italic">Greetings to all!</h2>
+                    <h2 className="text-xl lg:text-2xl font-bold text-[rgb(110,35,35)] mb-8 italic">Greetings to all!</h2>
                     <div className="text-base lg:text-lg text-gray-700 leading-loose text-justify font-sans">
                         {formattedMessageContent}
                     </div>
                     <div className="mt-12 flex flex-col items-end">
-                        <div className="h-0.5 w-32 bg-indigo-900 mb-2"></div>
-                        <p className="font-black text-indigo-950 text-xl tracking-tight">{vcMessage.signature}</p>
+                        <div className="h-0.5 w-32 bg-[rgb(100,25,25)] mb-2"></div>
+                        <p className="font-black text-[rgb(90,20,20)] text-xl tracking-tight">{vcMessage.signature}</p>
                         <p className="text-gray-500 font-bold uppercase tracking-widest text-[10px]">Vice-Chancellor, Anna University</p>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const VC = () => {
             {/* Profile Modal */}
             {showPopover && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                    <div className="absolute inset-0 bg-indigo-950/80 backdrop-blur-sm" onClick={() => setShowPopover(false)}></div>
+                    <div className="absolute inset-0 bg-[rgb(90,20,20)]/80 backdrop-blur-sm" onClick={() => setShowPopover(false)}></div>
                     <div className="relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full overflow-hidden flex flex-col max-h-[90vh] animate-pop-in">
                         <button
                             onClick={() => setShowPopover(false)}
@@ -103,29 +103,29 @@ const VC = () => {
 
                         <div className="overflow-y-auto p-8 sm:p-12">
                             <header className="mb-12 text-center">
-                                <h2 className="text-3xl lg:text-5xl font-black text-indigo-900 mb-2">Vice-Chancellor's Profile</h2>
-                                <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
+                                <h2 className="text-3xl lg:text-5xl font-black text-[rgb(100,25,25)] mb-2">Vice-Chancellor's Profile</h2>
+                                <div className="h-1.5 w-24 bg-[rgb(115,40,40)] mx-auto rounded-full"></div>
                             </header>
 
                             <div className="flex flex-col md:flex-row gap-12">
                                 <div className="md:w-1/3 flex flex-col items-center">
                                     <div className="relative mb-6">
                                         <img src="/velraj.webp" alt="Profile" className="w-48 h-64 object-cover rounded-2xl shadow-xl border-4 border-white" />
-                                        <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-3 rounded-2xl shadow-lg font-black italic">TOP 2% Researcher</div>
+                                        <div className="absolute -bottom-4 -right-4 bg-[rgb(115,40,40)] text-white p-3 rounded-2xl shadow-lg font-black italic">TOP 2% Researcher</div>
                                     </div>
-                                    <h4 className="text-2xl font-black text-indigo-900 text-center">{viceChancellor.name}</h4>
-                                    <p className="text-indigo-600 font-bold text-center mt-2 leading-tight uppercase tracking-widest text-xs px-4">{viceChancellor.position}</p>
+                                    <h4 className="text-2xl font-black text-[rgb(100,25,25)] text-center">{viceChancellor.name}</h4>
+                                    <p className="text-[rgb(115,40,40)] font-bold text-center mt-2 leading-tight uppercase tracking-widest text-xs px-4">{viceChancellor.position}</p>
                                 </div>
 
                                 <div className="flex-grow space-y-10 text-sans">
                                     <section>
-                                        <h3 className="text-lg font-black text-indigo-950 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                            <span className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">🎓</span> Education
+                                        <h3 className="text-lg font-black text-[rgb(90,20,20)] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                            <span className="w-8 h-8 bg-[rgb(200,120,120)] rounded-lg flex items-center justify-center text-[rgb(115,40,40)]">🎓</span> Education
                                         </h3>
                                         <div className="space-y-4">
                                             {viceChancellor.education.map((edu, i) => (
                                                 <div key={i} className="flex gap-4">
-                                                    <div className="text-blue-600 font-bold shrink-0">{edu.year}</div>
+                                                    <div className="text-[rgb(115,40,40)] font-bold shrink-0">{edu.year}</div>
                                                     <div>
                                                         <p className="font-bold text-gray-900 leading-tight">{edu.degree}</p>
                                                         <p className="text-sm text-gray-500">{edu.institution}</p>
@@ -136,7 +136,7 @@ const VC = () => {
                                     </section>
 
                                     <section>
-                                        <h3 className="text-lg font-black text-indigo-950 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        <h3 className="text-lg font-black text-[rgb(90,20,20)] uppercase tracking-widest mb-4 flex items-center gap-2">
                                             <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600">🔬</span> Research Interests
                                         </h3>
                                         <div className="flex flex-wrap gap-2">
@@ -147,7 +147,7 @@ const VC = () => {
                                     </section>
 
                                     <section>
-                                        <h3 className="text-lg font-black text-indigo-950 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                        <h3 className="text-lg font-black text-[rgb(90,20,20)] uppercase tracking-widest mb-4 flex items-center gap-2">
                                             <span className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600">🏆</span> Achievements
                                         </h3>
                                         <ul className="space-y-2">
@@ -160,12 +160,12 @@ const VC = () => {
                                         </ul>
                                     </section>
 
-                                    <section className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
-                                        <h3 className="text-lg font-black text-indigo-950 uppercase mb-2">Connect</h3>
-                                        <p className="text-sm font-bold text-indigo-600 mb-4 truncate italic">{viceChancellor.email}</p>
+                                    <section className="bg-[rgb(220,140,140)] p-6 rounded-2xl border border-[rgb(200,120,120)]">
+                                        <h3 className="text-lg font-black text-[rgb(90,20,20)] uppercase mb-2">Connect</h3>
+                                        <p className="text-sm font-bold text-[rgb(115,40,40)] mb-4 truncate italic">{viceChancellor.email}</p>
                                         <div className="flex gap-4">
                                             {Object.entries(viceChancellor.links).map(([name, url], i) => (
-                                                <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-blue-700 hover:underline">{name}</a>
+                                                <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="text-xs font-black text-[rgb(110,35,35)] hover:underline">{name}</a>
                                             ))}
                                         </div>
                                     </section>

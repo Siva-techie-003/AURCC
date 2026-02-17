@@ -1,9 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 import './POSH.css';
 
 const POSH = () => {
     return (
-        <main className="bg-gradient-to-br from-indigo-100 via-blue-50 to-white min-h-screen font-sans text-gray-800">
+        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="/offices.webp" alt="POSH Cell" className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -19,7 +19,7 @@ const POSH = () => {
             {/* Content Section */}
             <section className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-14 px-4 flex flex-col gap-8 sm:gap-10 lg:gap-12">
                 <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white">👩‍⚖️</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">POSH Resources & Guidelines</h2>
                     </div>
@@ -39,13 +39,13 @@ const POSH = () => {
                                         href={link.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 shadow-sm group"
+                                        className="flex items-center p-4 bg-white border border-gray-200 rounded-xl hover:bg-[rgb(220,140,140)] hover:border-[rgb(160,80,80)] transition-all duration-300 shadow-sm group"
                                     >
-                                        <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                                        <div className="w-10 h-10 rounded-full bg-[rgb(200,120,120)] text-[rgb(115,40,40)] flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
                                         </div>
-                                        <span className="text-blue-600 font-semibold group-hover:text-blue-800 text-sm lg:text-base">{link.title}</span>
-                                        <svg className="ml-auto w-5 h-5 text-gray-400 group-hover:text-blue-500 transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
+                                        <span className="text-[rgb(115,40,40)] font-semibold group-hover:text-[rgb(105,30,30)] text-sm lg:text-base">{link.title}</span>
+                                        <svg className="ml-auto w-5 h-5 text-gray-400 group-hover:text-[rgb(120,45,45)] transform group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg>
                                     </a>
                                 </li>
                             ))}
@@ -54,22 +54,22 @@ const POSH = () => {
                 </div>
 
                 <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100 overflow-hidden animate-fadeIn">
-                    <div className="bg-gradient-to-r from-blue-900 to-blue-500 py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
+                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-4 sm:py-5 flex items-center justify-center gap-2 sm:gap-3">
                         <span className="text-lg lg:text-xl text-white">📞</span>
                         <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white text-center">Contact Us</h2>
                     </div>
                     <div className="p-4 sm:p-6 md:p-8 lg:p-10 text-center space-y-4">
-                        <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 max-w-2xl mx-auto shadow-sm">
-                            <p className="font-bold text-lg text-blue-900 mb-2">The Coordinator,</p>
+                        <div className="bg-[rgb(220,140,140)] p-6 rounded-2xl border border-[rgb(200,120,120)] max-w-2xl mx-auto shadow-sm">
+                            <p className="font-bold text-lg text-[rgb(100,25,25)] mb-2">The Coordinator,</p>
                             <p className="text-gray-700 font-medium">POSH CELL,<br />Anna University Regional Campus,<br />Maruthamalai Main Road,<br />Coimbatore(Dt), Pin - 641 046.</p>
-                            <div className="mt-4 pt-4 border-t border-blue-200 flex flex-wrap justify-center gap-6">
+                            <div className="mt-4 pt-4 border-t border-[rgb(180,100,100)] flex flex-wrap justify-center gap-6">
                                 <div className="flex items-center gap-2">
-                                    <span className="font-bold text-blue-900">Phone:</span>
+                                    <span className="font-bold text-[rgb(100,25,25)]">Phone:</span>
                                     <span className="text-gray-800">0422-2984001</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="font-bold text-blue-900">E-Mail:</span>
-                                    <a href="mailto:poshcell@aurcc.ac.in" className="text-blue-600 font-bold hover:underline">poshcell@aurcc.ac.in</a>
+                                    <span className="font-bold text-[rgb(100,25,25)]">E-Mail:</span>
+                                    <a href="mailto:poshcell@aurcc.ac.in" className="text-[rgb(115,40,40)] font-bold hover:underline">poshcell@aurcc.ac.in</a>
                                 </div>
                             </div>
                         </div>

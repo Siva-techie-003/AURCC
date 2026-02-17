@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+﻿import React, { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -53,7 +53,7 @@ function App() {
         <div className="App min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">
-                <Suspense fallback={<div className="flex items-center justify-center p-20 text-indigo-600 font-bold animate-pulse">Loading Institutional Assets...</div>}>
+                <Suspense fallback={<div className="flex items-center justify-center p-20 text-[rgb(115,40,40)] font-bold animate-pulse">Loading Institutional Assets...</div>}>
                     <Routes>
                         <Route path="/" element={<HomeView />} />
                         <Route path="/about" element={<About />} />
