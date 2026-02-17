@@ -81,7 +81,8 @@ const Header = () => {
     return (
         <div className="z-50">
             {/* Top Bar */}
-            <div className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white">
+            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white">
+
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-between py-2 text-xs sm:text-sm">
                         <span className="font-medium truncate">Counselling Code: <span className="text-yellow-300 font-bold">2025</span></span>
@@ -109,11 +110,11 @@ const Header = () => {
                     <nav className="flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex items-center space-x-3 sm:space-x-5 cursor-pointer transform hover:scale-[1.02] transition-all" onClick={() => navigate('/')}>
-                            <img src="/logo.svg" alt="AURCC Logo" className="h-12 w-auto sm:h-16 md:h-18 lg:h-20" />
-                            <div className="flex flex-col min-w-0">
-                                <span className="text-xl sm:text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-indigo-700 leading-none">ANNA UNIVERSITY</span>
-                                <span className="text-[10px] sm:text-xs md:text-sm text-gray-400 font-bold uppercase tracking-widest mt-1">Regional Campus Coimbatore</span>
-                            </div>
+                            <img src="/logo_new5.png" alt="AURCC Logo" className="h-12 w-auto sm:h-16 md:h-18 lg:h-20" />
+                            {/* <div className="flex flex-col min-w-0">
+                                <span className="text-xl sm:text-2xl md:text-3xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-indigo-700 leading-none">AURCC</span>
+                                <span className="text-[10px] sm:text-xs md:text-sm text-gray-500 font-bold tracking-tighter mt-1">Anna University Regional Campus Coimbatore</span>
+                            </div> */}
                         </div>
 
                         {/* Desktop Nav */}

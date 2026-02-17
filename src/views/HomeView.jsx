@@ -171,9 +171,12 @@ const HomeView = () => {
                 {/* Hero Section */}
                 <section className="relative h-screen flex items-center justify-center overflow-hidden">
                     <div className="absolute inset-0 ">
-                        <img
-                            src="/Drone_shot.jpg"
-                            alt="Campus"
+                        <video
+                            src="/Droneshot1.mp4"   // place your mp4 file in public folder
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
                             className="h-full w-full object-cover scale-110 transform animate-subtle-zoom"
                         />
                         <div className="absolute inset-0 opacity-35 bg-slate-950"></div>
@@ -194,18 +197,18 @@ const HomeView = () => {
                     <div className="relative text-center px-4 sm:px-6 max-w-5xl mx-auto z-20">
                         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
                             <span className="block">Welcome to</span>
-                            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-200 mt-2">
+                            <span className="block text-transparent bg-clip-text text-white mt-2">
                                 Anna University
                             </span>
                         </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl text-blue-200 px-2">
+                        {/* <p className="text-lg sm:text-xl md:text-2xl text-blue-600 px-2">
                             Shaping Tomorrow's Leaders Today
-                        </p>
+                        </p> */}
                         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
                             <a href="#programs" className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-900 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
                                 Explore Programs
                             </a>
-                            <a href="#about" className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
+                            <a href="#about" className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
                                 Campus Tour
                             </a>
                         </div>
@@ -478,7 +481,7 @@ const HomeView = () => {
                 </section>
 
                 {/* Support Chatbot */}
-                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-full shadow-lg z-50">💬 Help Desk</button>
+                <button onClick={() => document.getElementById('my_modal_5').showModal()} className="fixed bottom-4 right-4 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white p-4 rounded-full shadow-lg z-50">💬 Help Desk</button>
                 <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                     <div className="modal-box p-0 w-80 shadow-lg rounded-lg fixed bottom-20 right-4 md:right-10">
                         <div className="flex justify-between items-center bg-blue-600 p-4 text-white rounded-t-lg">
