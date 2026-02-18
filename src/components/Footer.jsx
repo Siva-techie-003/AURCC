@@ -16,7 +16,7 @@ const Footer = () => {
                             </h3>
                             <div className="space-y-4 text-[rgb(200,120,120)]/80 leading-relaxed text-sm sm:text-base">
                                 <p className="font-black text-white text-base">Anna University Regional Campus Coimbatore</p>
-                                <p className="font-medium">Maruthamalai Road, Navavoor, Coimbatore - 641046</p>
+                                <p className="font-medium text-white">Maruthamalai Road, Navavoor, Coimbatore - 641046</p>
                                 <div className="flex items-center gap-3 py-2 px-4 bg-white/5 rounded-2xl border border-white/10 w-fit">
                                     <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                     <span className="font-black text-white">0422-2984007</span>
@@ -45,7 +45,7 @@ const Footer = () => {
                         <h3 className="text-xl font-black mb-8 uppercase tracking-tighter">
                             Navigation <span className="text-yellow-400">Hub</span>
                         </h3>
-                        <div className="grid grid-cols-1 gap-4">
+                        <div className="grid grid-cols-1 gap-0.5">
                             {[
                                 { to: "/", label: "Home", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
                                 { to: "/about", label: "About Us", icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
@@ -57,7 +57,7 @@ const Footer = () => {
                                     <div className="w-8 h-8 rounded-full bg-[rgb(220,140,140)]0/20 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-[rgb(100,25,25)] transition-all">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d={link.icon}></path></svg>
                                     </div>
-                                    <span className="text-[rgb(200,120,120)] font-bold group-hover:text-white transition-colors">{link.label}</span>
+                                    <span className="text-white font-bold group-hover:text-white transition-colors">{link.label}</span>
                                 </Link>
                             ))}
                         </div>
@@ -68,7 +68,7 @@ const Footer = () => {
                         <h3 className="text-xl font-black mb-8 uppercase tracking-tighter">
                             Student <span className="text-yellow-400">Portal</span>
                         </h3>
-                        <div className="space-y-3">
+                        <div className="space-y-0.5">
                             {[
                                 { to: "/library", label: "Digital Library" },
                                 { to: "/hostel", label: "Hostel Portal" },
@@ -76,7 +76,7 @@ const Footer = () => {
                                 { to: "/antiragging", label: "Safety Cell" },
                                 { to: "/downloads", label: "Forms & Downloads" }
                             ].map((res, idx) => (
-                                <Link key={idx} to={res.to} className="block py-4 px-6 bg-white/5 hover:bg-white/10 border border-white/5 rounded-2xl text-[rgb(200,120,120)] font-bold hover:text-white transition-all hover:translate-x-1">
+                                <Link key={idx} to={res.to} className="block py-4 px-6 hover:bg-white/10  rounded-2xl text-white font-bold transition-all hover:translate-x-1">
                                     {res.label}
                                 </Link>
                             ))}
@@ -103,7 +103,7 @@ const Footer = () => {
                         </div>
                         <div className="p-6 bg-white/5 rounded-[2.5rem] border border-white/10 space-y-2">
                             <p className="text-xs font-black uppercase tracking-widest text-yellow-400">Institutional Notice</p>
-                            <p className="text-sm text-[rgb(200,120,120)]/70 font-medium leading-relaxed">Anna University Coimbatore is committed to providing quality education in a safe campus environment.</p>
+                            <p className="text-sm text-white font-medium leading-relaxed">Anna University Coimbatore is committed to providing quality education in a safe campus environment.</p>
                         </div>
                     </div>
                 </div>
@@ -114,14 +114,14 @@ const Footer = () => {
                 <div className="container mx-auto px-4 sm:px-6 py-8">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                         <div className="text-center md:text-left">
-                            <p className="text-[rgb(180,100,100)]/60 text-xs font-bold uppercase tracking-widest">
+                            <p className="text-white text-xs font-bold uppercase tracking-widest">
                                 &copy; 2025 Anna University Regional Campus Coimbatore. All rights reserved.
                             </p>
                         </div>
                         <div className="flex items-center gap-8">
-                            <a href="#" className="text-[rgb(180,100,100)]/60 hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors">Team</a>
-                            <a href="#" className="text-[rgb(180,100,100)]/60 hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors">Privacy</a>
-                            <a href="#" className="text-[rgb(180,100,100)]/60 hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors">Safety</a>
+                            <a href="#" className="text-white hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors">Team</a>
+                            <a href="#" className="text-white hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors">Privacy</a>
+                            <a href="#" className="text-white hover:text-yellow-400 text-xs font-black uppercase tracking-widest transition-colors">Safety</a>
                         </div>
                     </div>
                 </div>
