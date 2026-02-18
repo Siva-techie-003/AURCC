@@ -2,12 +2,14 @@
 import './About.css';
 
 const About = () => {
-    const teamMembers = [
-        { name: "Janarthanan G", department: "Dept of AI & DS", photo: "janarthanan.webp", linkedin: "https://www.linkedin.com/in/janarthanangm/", github: "https://github.com/Janarthanan-Gnanamurthy" },
-        { name: "Subramaniyasiva S", department: "Dept of AI & DS", photo: "subramaniyasiva.webp", linkedin: "https://www.linkedin.com/in/subramaniyasiva-s-2202a6258/", github: "https://github.com/Subramaniyasiva002" },
-        { name: "Abinandida R", department: "Dept of AI & DS", photo: "abinandida.webp", linkedin: "https://www.linkedin.com/in/abinandida-r-377128258/", github: "https://github.com/camelia409" },
-        { name: "Ritik Naakendiran D", department: "Dept of AI & DS", photo: "ritik.webp", linkedin: "https://www.linkedin.com/in/ritik-naakendiran-d-b01198258/", github: "https://github.com/Ritik050105" },
-    ];
+    // const teamMembers = [
+    //     { name: "Anbumani V", department: "Dept of AI & DS", photo: "janarthanan.webp", linkedin: "https://www.linkedin.com/in/janarthanangm/", github: "https://github.com/Janarthanan-Gnanamurthy" },
+    //     { name: "Dhivakar G", department: "Dept of AI & DS", photo: "subramaniyasiva.webp", linkedin: "https://www.linkedin.com/in/subramaniyasiva-s-2202a6258/", github: "https://github.com/Subramaniyasiva002" },
+    //     { name: "Santhosh S", department: "Dept of AI & DS", photo: "abinandida.webp", linkedin: "https://www.linkedin.com/in/abinandida-r-377128258/", github: "https://github.com/camelia409" },
+    //     { name: "Siva E", department: "Dept of AI & DS", photo: "ritik.webp", linkedin: "https://www.linkedin.com/in/ritik-naakendiran-d-b01198258/", github: "https://github.com/Ritik050105" },
+    //     { name: "Suresh Krishna P", department: "Dept of AI & DS", photo: "ritik.webp", linkedin: "https://www.linkedin.com/in/ritik-naakendiran-d-b01198258/", github: "https://github.com/Ritik050105" },
+
+    // ];
 
     return (
         <main>

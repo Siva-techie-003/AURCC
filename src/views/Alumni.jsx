@@ -4,7 +4,7 @@ import './Alumni.css';
 
 const Alumni = () => {
     return (
-        <main className="flex-grow font-sans bg-[rgb(220,140,140)]">
+        <main className="flex-grow font-sans bg-white">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1200&q=80" alt="Alumni" className="absolute inset-0 w-full h-full object-cover object-center" />

@@ -48,7 +48,7 @@ const PlacementCell = () => {
                                 { title: 'Industry Connections', desc: 'Strong ties with top recruiters and regular campus drives.' },
                                 { title: 'Career Awareness', desc: 'Information on value-added courses and opportunities in private and government sectors.' }
                             ].map((item, i) => (
-                                <div key={i} className="flex gap-3 p-4 bg-[rgb(220,140,140)]/50 rounded-xl border border-[rgb(200,120,120)]">
+                                <div key={i} className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100">
                                     <span className="text-[rgb(120,45,45)] font-bold">✔</span>
                                     <div>
                                         <span className="font-bold text-gray-900 block">{item.title}</span>
@@ -57,7 +57,7 @@ const PlacementCell = () => {
                                 </div>
                             ))}
                         </div>
-                        <p className="text-base lg:text-lg text-[rgb(110,35,35)] font-bold border-l-4 border-l-[rgb(120,45,45)] pl-4 py-2 bg-[rgb(220,140,140)]/30 rounded-r-lg">
+                        <p className="text-base lg:text-lg text-[rgb(110,35,35)] font-bold border-l-4 border-l-[rgb(120,45,45)] pl-4 py-2 bg-gray-50 rounded-r-lg">
                             Our mission: To help every student achieve their dream job and build a successful career.
                         </p>
                     </div>

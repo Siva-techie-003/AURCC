@@ -10,7 +10,7 @@ const Registrar = () => {
     };
 
     return (
-        <div className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen py-12 sm:py-20 px-4 text-left">
+        <div className="bg-white min-h-screen py-12 sm:py-20 px-4 text-left">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
                 <header className="mb-16 text-center animate-fadeIn">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[rgb(90,20,20)] uppercase tracking-tighter font-serif mb-4">University Leadership</h1>
@@ -26,15 +26,15 @@ const Registrar = () => {
                             className="admin-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(200,120,120)] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group animate-fadeInUp"
                         >
                             <div className="w-full h-64 sm:h-72 lg:h-80 bg-gray-50 flex justify-center items-end relative overflow-hidden group-hover:bg-[rgb(220,140,140)]/50 transition-colors">
-                                {/* Decorative background circle */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full opacity-50 group-hover:scale-150 transition-transform duration-1000"></div>
+                                {/* Decorative background circle
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full opacity-50 group-hover:scale-150 transition-transform duration-1000"></div> */}
                                 <img
                                     src={getPhotoPath(member.image)}
                                     alt={member.name}
                                     className="relative h-[95%] w-auto object-contain z-10 transition-transform duration-500 group-hover:scale-105"
                                 />
                             </div>
-                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 sm:p-8 w-full text-center flex flex-col justify-center min-h-[160px] border-t-4 border-[rgb(140,60,60)]">
+                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 sm:p-8 w-full text-center flex flex-col justify-center flex-grow min-h-[160px] border-t-4 border-[rgb(140,60,60)]">
                                 <h2 className="text-xl sm:text-2xl font-black text-white leading-tight uppercase mb-2 tracking-tight">{member.name}</h2>
                                 <div className="h-0.5 w-10 bg-[rgb(140,60,60)] mx-auto mb-3 rounded-full opacity-60"></div>
                                 <p className="text-sm sm:text-base font-bold text-[rgb(200,120,120)] uppercase tracking-widest opacity-90">{member.position}</p>

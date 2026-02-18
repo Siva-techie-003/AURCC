@@ -108,7 +108,7 @@ const DepartmentsView = () => {
     if (!department) return null;
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50">
+        <div className="min-h-screen flex flex-col bg-white">
             <main>
                 {/* Hero section */}
                 <section
@@ -157,7 +157,7 @@ const DepartmentsView = () => {
                 <section className="mx-auto">
                     <div id="content-sections" className="w-full">
                         {/* About Department */}
-                        <div id="about-department" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-gradient-to-b from-gray-50 to-white">
+                        <div id="about-department" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
                             <div className="max-w-6xl mx-auto">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-start">
                                     <div className="flex flex-col h-full">
@@ -284,7 +284,7 @@ const DepartmentsView = () => {
                         </div>
 
                         {/* Achievements */}
-                        <div id="achievements" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-gray-50">
+                        <div id="achievements" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                                 <span className="bg-gradient-to-r from-purple-600 to-[rgb(115,25,25)] bg-clip-text text-transparent">Department Achievements</span>
                             </h2>
@@ -434,7 +434,7 @@ const DepartmentsView = () => {
                         </div>
 
                         {/* Research and Publications */}
-                        <div id="research-and-publications" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-gray-50">
+                        <div id="research-and-publications" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-12 bg-white">
                             <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
                                 <span className="bg-gradient-to-r from-purple-600 to-violet-600 bg-clip-text text-transparent">Research & Publications</span>
                             </h2>

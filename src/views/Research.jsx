@@ -31,7 +31,7 @@ const Research = () => {
                     title="About the Research Cell"
                     icon="ℹ️"
                 >
-                    <div className="bg-[rgb(220,140,140)]/50 p-6 rounded-2xl border border-[rgb(200,120,120)] shadow-sm text-left">
+                    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-left">
                         <ul className="list-disc pl-5 space-y-4 text-base lg:text-lg xl:text-xl text-gray-800 leading-relaxed italic">
                             {(Array.isArray(researchData?.description) ? researchData.description : []).map((desc, index) => (
                                 <li key={index} className="whitespace-pre-wrap break-words">

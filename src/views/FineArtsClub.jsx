@@ -4,7 +4,7 @@ import './FineArtsClub.css';
 
 const FineArtsClub = () => {
     return (
-        <main className="flex-grow font-sans bg-[rgb(220,140,140)]">
+        <main className="flex-grow font-sans bg-white">
             {/* Hero section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-hidden flex items-center justify-center">
                 <img src="/fac.webp" alt="Fine Arts Club" className="absolute inset-0 w-full h-full object-cover object-center" />

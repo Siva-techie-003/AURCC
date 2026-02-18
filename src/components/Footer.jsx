@@ -115,7 +115,7 @@ const Footer = () => {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                         <div className="text-center md:text-left">
                             <p className="text-white text-xs font-bold uppercase tracking-widest">
-                                &copy; 2025 Anna University Regional Campus Coimbatore. All rights reserved.
+                                &copy; 2026 Anna University Regional Campus Coimbatore. All rights reserved.
                             </p>
                         </div>
                         <div className="flex items-center gap-8">

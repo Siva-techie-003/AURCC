@@ -49,7 +49,7 @@ const VC = () => {
         ));
 
     return (
-        <main className="min-h-screen flex justify-center items-center bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white py-12 px-4 font-serif text-left">
+        <main className="min-h-screen flex justify-center items-center bg-white py-12 px-4 font-serif text-left">
             <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl max-w-5xl w-full border border-[rgb(200,120,120)] flex flex-col md:flex-row gap-10 animate-scale-in">
                 {/* Profile Sidebar */}
                 <div className="md:w-1/3 flex flex-col items-center">

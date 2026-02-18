@@ -28,7 +28,7 @@ const Pace = () => {
                     icon="🧭"
                 >
                     <div className="space-y-6">
-                        <p className="text-base lg:text-lg xl:text-xl font-medium text-[rgb(100,25,25)] border-l-4 border-[rgb(115,40,40)] pl-4 bg-[rgb(220,140,140)]/50 py-4 rounded-r-2xl">
+                        <p className="text-base lg:text-lg xl:text-xl font-medium text-[rgb(100,25,25)] border-l-4 border-[rgb(115,40,40)] pl-4 bg-white py-4 rounded-r-2xl">
                             <span className="font-black">PACE (Placement and Competitive Exam) Cell</span> at Anna University Regional Campus Coimbatore is your dedicated partner for success in government and competitive exams.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
