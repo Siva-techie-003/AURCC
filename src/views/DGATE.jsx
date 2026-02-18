@@ -88,7 +88,7 @@ const DGATE = () => {
                     title="Activities"
                     icon="🎯"
                 >
-                    <div className="relative h-24 overflow-hidden mb-2 rounded-xl bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white shadow-inner border border-[rgb(180,100,100)] group">
+                    <div className="relative h-24 overflow-hidden mb-2 rounded-xl bg-gray-50 shadow-inner border border-gray-100 group">
                         <ul className="notice-ticker absolute w-full animate-vertical-scroll hover:animation-paused">
                             {activityHighlights.concat(activityHighlights).map((item, idx) => (
                                 <li key={idx} className="flex items-center gap-3 px-6 py-4 text-[rgb(100,25,25)] font-semibold text-sm lg:text-base h-24">

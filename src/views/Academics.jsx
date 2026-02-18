@@ -208,7 +208,7 @@ const Academics = () => {
                     </div>
 
                     {/* Main Content Area */}
-                    <div className="md:col-span-3 bg-white/50 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm text-center">
+                    <div className="md:col-span-3 bg-white p-4 sm:p-6 md:p-8 rounded-xl border border-gray-100 shadow-sm text-center">
                         {renderSectionContent()}
                     </div>
                 </div>

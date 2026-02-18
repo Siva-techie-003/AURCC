@@ -27,11 +27,11 @@ const COD = () => {
     const getCentreIcon = (centre) => centreIcons[centre] || '🎓';
 
     return (
-        <div className="p-4 sm:p-6 md:p-9 bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen">
+        <div className="p-4 sm:p-6 md:p-9 bg-white min-h-screen">
             <div className="text-center py-4 sm:py-5">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold text-[rgb(100,25,25)] tracking-wide font-serif">CELL COORDINATORS</h1>
                 <div className="flex justify-center mt-2 mb-3 sm:mb-4">
-                    <span className="block w-24 sm:w-32 h-1 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)] animate-glow-bar"></span>
+                    <span className="block w-24 sm:w-32 h-2 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)]"></span>
                 </div>
             </div>
             <div className="container mx-auto grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-sans">

@@ -34,7 +34,7 @@ const Zonal = () => {
                     title="Description"
                     icon="ℹ️"
                 >
-                    <div className="bg-[rgb(220,140,140)]/30 p-6 rounded-2xl border border-[rgb(200,120,120)] shadow-sm text-left">
+                    <div className="bg-white p-6 rounded-2xl border border-[rgb(200,120,120)] shadow-sm text-left">
                         <ul className="list-disc pl-5 space-y-3 text-sm lg:text-base xl:text-lg text-gray-800 leading-relaxed font-medium">
                             {(Array.isArray(data?.description) ? data.description : []).map((desc, index) => (
                                 <li key={index}>

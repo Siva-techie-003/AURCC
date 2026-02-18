@@ -6,7 +6,7 @@ const Admin = () => {
     const administrator = administrationData;
 
     return (
-        <div className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen">
+        <div className="bg-white min-h-screen">
             <div className="text-center md:py-6 py-3 bg-[rgb(110,35,35)] bg-opacity-90">
                 <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold font-serif text-white tracking-wide uppercase">ADMINISTRATIVE STAFF</h1>
             </div>
@@ -16,7 +16,7 @@ const Admin = () => {
                         <div key={sectionName} className="mb-8 sm:mb-12">
                             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-4xl font-bold mb-3 sm:mb-4 text-center font-serif tracking-wide">{sectionName}</h2>
                             <div className="flex justify-center mb-6 sm:mb-8">
-                                <span className="block w-24 sm:w-32 h-1 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)] animate-glow-bar"></span>
+                                <span className="block w-24 sm:w-32 h-2 rounded-full bg-gradient-to-r from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-[rgb(115,25,25)]"></span>
                             </div>
                             {Object.entries(section).map(([subsectionName, subsection]) => (
                                 <div key={subsectionName} className="mb-6 sm:mb-8">

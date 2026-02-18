@@ -62,7 +62,7 @@ const ProgramsOffered = () => {
     );
 
     return (
-        <div className="flex-grow bg-gray-50 min-h-screen text-left">
+        <div className="flex-grow bg-white min-h-screen text-left">
             {/* Hero Section */}
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[45vh] overflow-hidden flex items-center justify-center">
                 <img

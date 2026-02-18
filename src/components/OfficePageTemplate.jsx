@@ -47,7 +47,7 @@ const OfficePageTemplate = ({
     }, [sections, currentSection]);
 
     return (
-        <main className="bg-gradient-to-br from-[rgb(115,63,63)] via-[rgb(115,45,45)] to-white min-h-screen font-sans text-gray-800">
+        <main className="bg-white min-h-screen font-sans text-gray-800">
             {/* Hero Section */}
             <section className="relative w-full min-h-[35vh] sm:min-h-[40vh] md:min-h-[60vh] overflow-hidden flex items-center justify-center animate-fadeIn">
                 <img src={heroImage} alt={officeName} className="absolute inset-0 w-full h-full object-cover object-center" />
@@ -70,8 +70,8 @@ const OfficePageTemplate = ({
                                     key={section.key}
                                     onClick={() => scrollToSection(section.key)}
                                     className={`font-medium px-3 sm:px-4 md:px-5 py-2 md:py-3 rounded-full text-xs sm:text-sm md:text-base transition duration-300 whitespace-nowrap touch-manipulation ${currentSection === section.key
-                                            ? 'bg-[rgb(115,40,40)] text-white shadow-lg'
-                                            : 'text-gray-700 hover:bg-gray-100 hover:shadow-md'
+                                        ? 'bg-[rgb(115,40,40)] text-white shadow-lg'
+                                        : 'text-gray-700 hover:bg-gray-100 hover:shadow-md'
                                         }`}
                                 >
                                     {section.label}
