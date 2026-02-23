@@ -72,7 +72,7 @@ const StudentAffairs = () => {
             </section>
 
             {/* Navigation Tabs - Modern floating design */}
-            <div className="sticky top-0 z-20">
+            <div className="sticky top-6 z-20">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
@@ -134,8 +134,15 @@ const StudentAffairs = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {(Array.isArray(content?.Scholarship?.['list of scholarships']) ? content.Scholarship['list of scholarships'] : []).map((scholarship, index) => (
                                 <div key={index} className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-[rgb(160,80,80)] transition-colors">
-                                    <span className="bg-[rgb(200,120,120)] text-[rgb(110,35,35)] w-8 h-8 rounded-full flex items-center justify-center font-bold">★</span>
-                                    <span className="text-base font-semibold text-gray-800">{scholarship}</span>
+<span className="w-8 h-8 min-w-[32px] 
+                 rounded-full 
+                 flex items-center justify-center 
+                 bg-[rgb(200,120,120)] 
+                 text-[rgb(110,35,35)] 
+                 text-sm font-bold 
+                 leading-none">
+    ★
+</span>                                    <span className="text-base font-semibold text-gray-800">{scholarship}</span>
                                 </div>
                             ))}
                         </div>
@@ -179,11 +186,9 @@ const StudentAffairs = () => {
                                         <img
                                             src={staff.Image}
                                             alt={staff['Name of the Staff']}
-                                            className="w-28 h-28 rounded-2xl object-cover border-4 border-white shadow-lg group-hover:rotate-6 transition-transform"
+                                            className="w-28 h-28 rounded-2xl object-cover border-4 border-white shadow-lg  transition-transform"
                                         />
-                                        <div className="absolute -bottom-2 -right-2 bg-[rgb(115,40,40)] text-white p-1 rounded-lg text-xs font-bold shadow-sm">
-                                            {staff['S.No']}
-                                        </div>
+                                        
                                     </div>
                                     <h3 className="font-bold text-lg text-[rgb(100,25,25)] uppercase tracking-tight">{staff['Name of the Staff']}</h3>
                                     <div className="h-0.5 w-12 bg-[rgb(180,100,100)] my-2"></div>
@@ -194,19 +199,7 @@ const StudentAffairs = () => {
                     </div>
                 </div>
 
-                {/* Contact Section */}
-                <div id="contact" ref={sectionRefs.contact} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all text-center">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-white">
-                        <h2 className="text-xl lg:text-2xl font-bold">Contact Us</h2>
-                    </div>
-                    <div className="p-8">
-                        <div className="max-w-2xl mx-auto bg-[rgb(220,140,140)]/50 p-8 rounded-3xl border border-[rgb(200,120,120)] shadow-inner">
-                            <p className="text-lg lg:text-xl font-bold text-[rgb(100,25,25)] whitespace-pre-line leading-loose">
-                                {content?.['contact us'] || 'Contact information will be updated soon.'}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                
             </main>
         </div>
     );

@@ -15,7 +15,11 @@ const Regulation = () => {
     }));
 
     return (
+<<<<<<< HEAD
         <div className="flex-grow bg-white min-h-screen text-left">
+=======
+        <div className="flex-grow bg-gradient-to-br from-gray-100 via-[rgb(255, 255, 255)] to-white min-h-screen text-left">
+>>>>>>> 216d0e1e4e5c59fdc9c8281a2a2db138ee26699c
             {/* Hero section */}
             <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[40vh] overflow-hidden flex items-center justify-center">
                 <img
