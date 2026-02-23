@@ -33,8 +33,11 @@ const CurriculumSyllabus = () => {
                 {/* UG Section */}
                 <section>
                     <SectionHeader title="UG Curriculum" />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {(Array.isArray(data?.['UG programmes']) ? data['UG programmes'] : []).map((programme, idx) => (
+<div
+                        className="grid gap-10 justify-center
+                                   [grid-template-columns:repeat(auto-fit,minmax(320px,320px))]
+                                   max-w-[1100px] mx-auto"
+                    >                        {(Array.isArray(data?.['UG programmes']) ? data['UG programmes'] : []).map((programme, idx) => (
                             <SyllabusCard
                                 key={`ug-${idx}`}
                                 title={programme['Curriculum & Syllabus']}
@@ -48,8 +51,11 @@ const CurriculumSyllabus = () => {
                 {/* PG Section */}
                 <section>
                     <SectionHeader title="PG Curriculum" />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {(Array.isArray(data?.['PG programmes']) ? data['PG programmes'] : []).map((programme, idx) => (
+<div
+                        className="grid gap-10 justify-center
+                                   [grid-template-columns:repeat(auto-fit,minmax(320px,320px))]
+                                   max-w-[1100px] mx-auto"
+                    >                        {(Array.isArray(data?.['PG programmes']) ? data['PG programmes'] : []).map((programme, idx) => (
                             <SyllabusCard
                                 key={`pg-${idx}`}
                                 title={programme['Curriculum & Syllabus']}
