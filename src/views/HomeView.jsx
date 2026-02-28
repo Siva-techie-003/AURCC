@@ -582,7 +582,7 @@ const HomeView = () => {
 
 
                 {/* Dean's Message */}
-                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[rgb(115,73,73)] to-[rgb(115,73,73)] text-white relative overflow-hidden">
+                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-[rgb(171,110,110)] text-white relative overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="wave-pattern" width="100" height="20" patternUnits="userSpaceOnUse">
@@ -653,17 +653,17 @@ const HomeView = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-16 lg:py-24 bg-gray-100 overflow-hidden relative">
+                <section className="py-16 lg:py-24 bg-[rgb(171,110,110)] overflow-hidden relative">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
                         {/* Heading */}
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-[rgb(100,25,25)] relative inline-block">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
                             OUR HIRING PARTNERS
                             <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
                         </h2>
 
                         {/* Slider Wrapper */}
-                        <div className="relative w-full bg-gray-100 overflow-hidden">
+                        <div className="relative w-full bg-[rgb(171,110,110)] overflow-hidden">
 
                             {/* Sliding Track */}
                             <div
@@ -718,7 +718,7 @@ const HomeView = () => {
                             {Array.from({ length: 12 }).map((_, index) => (
                                 <span
                                     key={index}
-                                    className="h-3 w-3 rounded-full bg-gray-400"
+                                    className="h-3 w-3 rounded-full bg-white"
                                 ></span>
                             ))}
                         </div>
@@ -760,7 +760,7 @@ const HomeView = () => {
                                                 <div className="md:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
                                                     <img src={testimonial.image} alt={testimonial.name} className="w-32 h-32 rounded-full border-4 border-white mb-4 object-cover" />
                                                     <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
-                                                    <p className="text-[rgb(180,100,100)]">{testimonial.branch} | {testimonial.batch}</p>
+                                                    <p className="text-white">{testimonial.branch} | {testimonial.batch}</p>
                                                     <p className="text-white font-semibold mt-2 text-center text-sm">Placed in <span className="text-yellow-300">{testimonial.company}</span></p>
                                                 </div>
                                                 <div className="md:col-span-2 p-8 flex flex-col justify-center">
@@ -772,8 +772,8 @@ const HomeView = () => {
                                     ))}
                                 </div>
                             </div>
-                            <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group"><svg className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></button>
-                            <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group"><svg className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg></button>
+                            <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group z-20"><svg className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></button>
+                            <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group z-20"><svg className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg></button>
                         </div>
                     </div>
                 </section>
