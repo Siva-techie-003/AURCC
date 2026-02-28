@@ -51,28 +51,48 @@ const StudentAffairs = () => {
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 text-left">
-            {/* Hero section */}
-            <section
-                className="bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-96"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-            >
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/60 to-[rgb(115,25,25)]/40"></div>
-                <div className="container mx-auto h-full flex items-center relative z-10 px-4">
-                    <div className="max-w-2xl">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
-                            <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
-                                Student Affairs
-                            </span>
-                        </h1>
-                        <p className="text-base sm:text-lg lg:text-xl text-gray-100 leading-relaxed font-medium">
-                            The Office of Student Affairs is dedicated to students' academic and personal success.
-                        </p>
-                    </div>
-                </div>
-            </section>
+{/* Hero Section */}
+<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
+
+    {/* Background Image */}
+    <img
+        src={backgroundImage}
+        alt="Student Affairs"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+    />
+
+    {/* Soft Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/20 to-black/20"></div>
+
+    {/* Glass Card */}
+    <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
+                    max-w-4xl w-full text-center
+                    bg-[rgb(200,20,20)]/45 backdrop-blur-2xl
+                    border border-white/30
+                    rounded-3xl
+                    shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                    transition-all duration-500">
+
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl 
+                       font-black text-white 
+                       tracking-tight mb-4">
+            Student Affairs
+        </h1>
+        <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+
+        <p className="text-sm sm:text-lg lg:text-xl 
+                      text-gray-100 
+                      font-medium 
+                      leading-relaxed max-w-2xl mx-auto">
+            The Office of Student Affairs is dedicated to students' academic and personal success.
+        </p>
+
+    </div>
+
+</section>
 
             {/* Navigation Tabs - Modern floating design */}
-            <div className="sticky top-0 z-20">
+            <div className="sticky top-6 z-20">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="bg-white/95 backdrop-blur-md shadow-lg rounded-full -mt-6 py-2 px-3 flex justify-center overflow-x-auto no-scrollbar gap-2 border border-[rgb(220,140,140)]">
                         {sections.map((section) => (
@@ -134,8 +154,15 @@ const StudentAffairs = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {(Array.isArray(content?.Scholarship?.['list of scholarships']) ? content.Scholarship['list of scholarships'] : []).map((scholarship, index) => (
                                 <div key={index} className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-[rgb(160,80,80)] transition-colors">
-                                    <span className="bg-[rgb(200,120,120)] text-[rgb(110,35,35)] w-8 h-8 rounded-full flex items-center justify-center font-bold">★</span>
-                                    <span className="text-base font-semibold text-gray-800">{scholarship}</span>
+<span className="w-8 h-8 min-w-[32px] 
+                 rounded-full 
+                 flex items-center justify-center 
+                 bg-[rgb(200,120,120)] 
+                 text-[rgb(110,35,35)] 
+                 text-sm font-bold 
+                 leading-none">
+    ★
+</span>                                    <span className="text-base font-semibold text-gray-800">{scholarship}</span>
                                 </div>
                             ))}
                         </div>
@@ -179,11 +206,9 @@ const StudentAffairs = () => {
                                         <img
                                             src={staff.Image}
                                             alt={staff['Name of the Staff']}
-                                            className="w-28 h-28 rounded-2xl object-cover border-4 border-white shadow-lg group-hover:rotate-6 transition-transform"
+                                            className="w-28 h-28 rounded-2xl object-cover border-4 border-white shadow-lg  transition-transform"
                                         />
-                                        <div className="absolute -bottom-2 -right-2 bg-[rgb(115,40,40)] text-white p-1 rounded-lg text-xs font-bold shadow-sm">
-                                            {staff['S.No']}
-                                        </div>
+                                        
                                     </div>
                                     <h3 className="font-bold text-lg text-[rgb(100,25,25)] uppercase tracking-tight">{staff['Name of the Staff']}</h3>
                                     <div className="h-0.5 w-12 bg-[rgb(180,100,100)] my-2"></div>
@@ -194,19 +219,7 @@ const StudentAffairs = () => {
                     </div>
                 </div>
 
-                {/* Contact Section */}
-                <div id="contact" ref={sectionRefs.contact} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all text-center">
-                    <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-8 text-white">
-                        <h2 className="text-xl lg:text-2xl font-bold">Contact Us</h2>
-                    </div>
-                    <div className="p-8">
-                        <div className="max-w-2xl mx-auto bg-[rgb(220,140,140)]/50 p-8 rounded-3xl border border-[rgb(200,120,120)] shadow-inner">
-                            <p className="text-lg lg:text-xl font-bold text-[rgb(100,25,25)] whitespace-pre-line leading-loose">
-                                {content?.['contact us'] || 'Contact information will be updated soon.'}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                
             </main>
         </div>
     );

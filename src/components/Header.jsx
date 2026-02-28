@@ -125,8 +125,7 @@ const Header = () => {
                                         {section.name}
                                         <svg className="w-4 h-4 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
                                     </button>
-                                    <div className="absolute top-full right-0 mt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">
-                                        {section.links.map((link, lIdx) => (
+<div className="absolute top-full right-0 pt-2 py-3 bg-white rounded-2xl shadow-2xl border border-gray-100 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all w-64 z-50">                                        {section.links.map((link, lIdx) => (
                                             <Link key={lIdx} to={link.route} className="block px-6 py-2.5 text-sm font-bold text-gray-600 hover:text-[rgb(115,40,40)] hover:bg-[rgb(220,140,140)]/50 transition-colors">
                                                 {link.name}
                                             </Link>

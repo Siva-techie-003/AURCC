@@ -19,26 +19,35 @@ const Registrar = () => {
                     </div>
                 </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full px-4">
                     {administrators.map((member, index) => (
                         <div
                             key={index}
-                            className="admin-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(200,120,120)] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group animate-fadeInUp"
+                            className="admin-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[340px] mx-auto"
                         >
-                            <div className="w-full h-64 sm:h-72 lg:h-80 bg-gray-50 flex justify-center items-end relative overflow-hidden group-hover:bg-[rgb(220,140,140)]/50 transition-colors">
-                                {/* Decorative background circle
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full opacity-50 group-hover:scale-150 transition-transform duration-1000"></div> */}
-                                <img
-                                    src={getPhotoPath(member.image)}
-                                    alt={member.name}
-                                    className="relative h-[95%] w-auto object-contain z-10 transition-transform duration-500 group-hover:scale-105"
-                                />
+                            {/* Header Section */}
+                            <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
                             </div>
-                            <div className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-6 sm:p-8 w-full text-center flex flex-col justify-center flex-grow min-h-[160px] border-t-4 border-[rgb(140,60,60)]">
-                                <h2 className="text-xl sm:text-2xl font-black text-white leading-tight uppercase mb-2 tracking-tight">{member.name}</h2>
-                                <div className="h-0.5 w-10 bg-[rgb(140,60,60)] mx-auto mb-3 rounded-full opacity-60"></div>
-                                <p className="text-sm sm:text-base font-bold text-[rgb(200,120,120)] uppercase tracking-widest opacity-90">{member.position}</p>
-                                <p className="text-[10px] lg:text-xs font-bold text-[rgb(180,100,100)] mt-2 uppercase tracking-wide opacity-80">{member.university}</p>
+
+                            {/* Profile Image Section */}
+                            <div className="relative -mt-16 flex justify-center">
+                                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
+                                    <img
+                                        src={getPhotoPath(member.image)}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Content Section */}
+                            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
+                                <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight uppercase">{member.name}</h2>
+                                <div className="flex flex-col gap-1">
+                                    <p className="text-sm font-semibold text-gray-700 font-sans tracking-wide uppercase">{member.position}</p>
+                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{member.university}</p>
+                                    {member.email && <p className="text-xs text-blue-500 font-sans mt-2">{member.email}</p>}
+                                </div>
                             </div>
                         </div>
                     ))}

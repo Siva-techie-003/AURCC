@@ -309,7 +309,7 @@ const HomeView = () => {
                 </section>
 
                 {/* About Section */}
-                <section id="about" className="container mx-auto px-4 sm:px-8 lg:px-14 relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+                <section id="about" className="container mx-auto px-4 sm:px-8 lg:px-14 relative py-12 sm:py-16 lg:py-10 overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="dots-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -324,7 +324,7 @@ const HomeView = () => {
                     </div>
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Row 1: About Description + Featured Image */}
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12 sm:mb-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center mb-12 sm:mb-16">
                             <div className="lg:col-span-7 space-y-8">
                                 <h2 className="text-2xl sm:text-3xl font-bold text-[rgb(100,25,25)] relative inline-block group">
                                     ABOUT OUR CAMPUS
@@ -421,7 +421,7 @@ const HomeView = () => {
 
                 <QuickLinksSidebar />
 
-                {/* Programs Offered Showcase */}
+                {/* Programs Offered Showcase
                 <section id="programs" className="py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -440,7 +440,7 @@ const HomeView = () => {
                             <div className="overflow-x-auto scrollbar-hide">
                                 <div className="flex space-x-6 py-4 w-max">
                                     {[
-                                        { title: 'B.E. (COMPUTER SCIENCE AND ENGINEERING)', icon: '💻', color: 'bg-[rgb(220,140,140)]0', url: '/departments/cse' },
+                                        { title: 'Bachelor of Degree (COMPUTER SCIENCE AND ENGINEERING)', icon: '💻', color: 'bg-[rgb(220,140,140)]0', url: '/departments/cse' },
                                         { title: 'B.E. (ELECTRONICS AND COMMUNICATION ENGINEERING)', icon: '📡', color: 'bg-green-500', url: '/departments/ece' },
                                         { title: 'B.E. (ELECTRICAL AND ELECTRONICS ENGINEERING)', icon: '⚡', color: 'bg-yellow-500', url: '/departments/eee' },
                                         { title: 'B.E. (MECHANICAL ENGINEERING)', icon: '🛠️', color: 'bg-red-500', url: '/departments/mech' },
@@ -451,7 +451,7 @@ const HomeView = () => {
                                     ].map((prog, idx) => (
                                         <div key={idx} className="bg-white rounded-xl p-8 shadow-lg transform hover:-translate-y-2 transition-all duration-300 w-72">
                                             <div className={`p-4 rounded-full text-white inline-block mb-6 h-14 w-14 flex items-center justify-center text-2xl ${prog.color}`}>{prog.icon}</div>
-                                            <h3 className="text-xl font-bold text-gray-900 mb-4">{prog.title}</h3>
+                                            <h3 className="text-lg font-bold text-gray-900 mb-4">{prog.title}</h3>
                                             <p className="text-gray-600 mb-6 h-20">Explore opportunities in {prog.title.toLowerCase()}.</p>
                                             <Link to={prog.url} className="text-[rgb(120,45,45)] font-semibold hover:text-[rgb(110,35,35)] transition-colors">Learn More →</Link>
                                         </div>
@@ -460,10 +460,129 @@ const HomeView = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
+                <div className="mt-22 pb-12 relative">
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0 mt-2">
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                            <pattern id="hexagon-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+                                <path d="M50 0 L87.5 25 L87.5 75 L50 100 L12.5 75 L12.5 25 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                            </pattern>
+                            <rect width="100%" height="100%" fill="url(#hexagon-pattern)" />
+                        </svg>
+                    </div>
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mt-16 sm:mb-16 text-[rgb(100,25,25)] relative inline-block mx-20">
+                        PROGRAMS OFFERED
+                        <span className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-16 sm:w-20 lg:w-24 bg-yellow-500"></span>
+                    </h2>
+                    <div className="overflow-x-auto scrollbar-hide">
+                        <div className="flex space-x-8 py-4 w-max">
+
+                            {[
+                                {
+                                    heading: "BACHELOR OF DEGREE",
+                                    course: "Computer Science and Engineering",
+                                    image: "/cse.jpg",
+                                    url: "/departments/cse",
+                                },
+                                {
+                                    heading: "BACHELOR OF DEGREE",
+                                    course: "Electronics and Communication Engineering",
+                                    image: "/ece.jpg",
+                                    url: "/departments/ece",
+                                },
+                                {
+                                    heading: "BACHELOR OF DEGREE",
+                                    course: "Electrical and Electronics Engineering",
+                                    image: "/eee.jpg",
+                                    url: "/departments/eee",
+                                },
+                                {
+                                    heading: "BACHELOR OF DEGREE",
+                                    course: "Mechanical Engineering",
+                                    image: "/mech.jpg",
+                                    url: "/departments/mech",
+                                },
+                                {
+                                    heading: "BACHELOR OF TECHNOLOGY",
+                                    course: "Artifical Intelligence and Data Science",
+                                    image: "/ai.jpg",
+                                    url: "/departments/ai",
+                                },
+                                {
+                                    heading: "BACHELOR OF DEGREE",
+                                    course: "Electronics Engineering (VLSI Design & Technology)",
+                                    image: "/vlsi.jpg",
+                                    url: "/departments/vlsi",
+                                },
+                                {
+                                    heading: "MASTER OF DEGREE",
+                                    course: "Master of Business Administration",
+                                    image: "/mba.jpg",
+                                    url: "/departments/mba",
+                                },
+                                {
+                                    heading: "MASTER OF DEGREE",
+                                    course: "Master of Business Administration (BUSINESS ANALYTICS)",
+                                    image: "/mba_ba.jpg",
+                                    url: "/departments/mba",
+                                },
+                            ].map((prog, idx) => (
+
+                                <div
+                                    key={idx}
+                                    className="ml-7 group bg-white rounded-2xl shadow-lg overflow-hidden w-96 
+                     transform transition-all duration-500 
+                     hover:-translate-y-4 hover:shadow-2xl"
+                                >
+
+                                    {/* Image Section */}
+                                    <div className="h-48 w-full overflow-hidden">
+                                        <img
+                                            src={prog.image}
+                                            alt={prog.course}
+                                            className="w-full h-full object-cover 
+                         transition-transform duration-700 
+                         group-hover:scale-110"
+                                        />
+                                    </div>
+
+                                    {/* Content Section */}
+                                    <div className="p-6 text-center">
+
+                                        <h3 className="text-xl font-bold text-gray-500 tracking-wide">
+                                            {prog.heading}
+                                        </h3>
+
+                                        <h2 className="text-base font-bold text-gray-900 mt-2 leading-snug">
+                                            {prog.course}
+                                        </h2>
+
+                                        <p className="text-gray-600 mt-3 text-sm">
+                                            Explore opportunities in {prog.course.toLowerCase()}.
+                                        </p>
+
+                                        <Link
+                                            to={prog.url}
+                                            className="inline-block mt-5 text-[rgb(120,45,45)] font-semibold 
+                         relative after:block after:h-[2px] after:w-0 
+                         after:bg-[rgb(120,45,45)] after:transition-all 
+                         after:duration-300 group-hover:after:w-full"
+                                        >
+                                            Learn More →
+                                        </Link>
+
+                                    </div>
+                                </div>
+
+                            ))}
+
+                        </div>
+                    </div>
+                </div>
+
 
                 {/* Dean's Message */}
-                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] text-white relative overflow-hidden">
+                <section id="deans-message" className="py-12 sm:py-16 lg:py-24 bg-[rgb(171,110,110)] text-white relative overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
                         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                             <pattern id="wave-pattern" width="100" height="20" patternUnits="userSpaceOnUse">
@@ -534,6 +653,87 @@ const HomeView = () => {
                         </div>
                     </div>
                 </section>
+                <section className="py-16 lg:py-24 bg-[rgb(171,110,110)] overflow-hidden relative">
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+                        {/* Heading */}
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-12 text-white relative inline-block">
+                            OUR HIRING PARTNERS
+                            <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-1 w-20 bg-yellow-500"></span>
+                        </h2>
+
+                        {/* Slider Wrapper */}
+                        <div className="relative w-full bg-[rgb(171,110,110)] overflow-hidden">
+
+                            {/* Sliding Track */}
+                            <div
+                                id="logoTrack"
+                                className="flex gap-8 w-max animate-[logoscroll_30s_linear_infinite]"
+                            >
+                                {[
+                                    "/company1.jpg",
+                                    "/company2.jpg",
+                                    "/company3.jpg",
+                                    "/company4.jpg",
+                                    "/company5.jpg",
+                                    "/company6.jpg",
+                                    "/company7.jpg",
+                                    "/company8.jpg",
+                                    "/company9.jpg",
+                                    "/company10.jpg",
+                                    "/company11.png",
+                                    "/company12.webp",
+                                ]
+                                    .concat([
+                                        "/company1.jpg",
+                                        "/company2.jpg",
+                                        "/company3.jpg",
+                                        "/company4.jpg",
+                                        "/company5.jpg",
+                                        "/company6.jpg",
+                                        "/company7.jpg",
+                                        "/company8.jpg",
+                                        "/company9.jpg",
+                                        "/company10.jpg",
+                                        "/company11.png",
+                                        "/company12.webp",
+                                    ])
+                                    .map((logo, index) => (
+                                        <div
+                                            key={index}
+                                            className="min-w-[220px] h-[130px] bg-white rounded-2xl border-2 border-gray-200 flex items-center justify-center hover:shadow-xl hover:scale-105 transition duration-300"
+                                        >
+                                            <img
+                                                src={logo}
+                                                alt="Company Logo"
+                                                className="max-h-20 object-contain"
+                                            />
+                                        </div>
+                                    ))}
+                            </div>
+                        </div>
+
+                        {/* Dots (Moved Up) */}
+                        <div className="flex justify-center gap-3 mt-6">
+                            {Array.from({ length: 12 }).map((_, index) => (
+                                <span
+                                    key={index}
+                                    className="h-3 w-3 rounded-full bg-white"
+                                ></span>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Keyframes Inside Same Section */}
+                    <style>
+                        {`
+      @keyframes logoscroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+    `}
+                    </style>
+                </section>
 
                 {/* Alumni Testimonials */}
                 <section id="alumni" className="py-12 sm:py-16 lg:py-24 bg-gray-50 relative overflow-hidden">
@@ -560,7 +760,7 @@ const HomeView = () => {
                                                 <div className="md:col-span-1 bg-gradient-to-br from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 flex flex-col items-center justify-center">
                                                     <img src={testimonial.image} alt={testimonial.name} className="w-32 h-32 rounded-full border-4 border-white mb-4 object-cover" />
                                                     <h3 className="text-lg font-bold text-white">{testimonial.name}</h3>
-                                                    <p className="text-[rgb(180,100,100)]">{testimonial.branch} | {testimonial.batch}</p>
+                                                    <p className="text-white">{testimonial.branch} | {testimonial.batch}</p>
                                                     <p className="text-white font-semibold mt-2 text-center text-sm">Placed in <span className="text-yellow-300">{testimonial.company}</span></p>
                                                 </div>
                                                 <div className="md:col-span-2 p-8 flex flex-col justify-center">
@@ -572,8 +772,8 @@ const HomeView = () => {
                                     ))}
                                 </div>
                             </div>
-                            <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group"><svg className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></button>
-                            <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group"><svg className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg></button>
+                            <button onClick={prevSlide} className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group z-20"><svg className="h-6 w-6 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg></button>
+                            <button onClick={nextSlide} className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-[rgb(115,25,25)] text-white p-3 rounded-full shadow-lg group z-20"><svg className="h-6 w-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg></button>
                         </div>
                     </div>
                 </section>

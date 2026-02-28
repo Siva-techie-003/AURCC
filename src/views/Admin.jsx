@@ -59,9 +59,14 @@ const AdminStaffCard = ({ member }) => {
     const [error, setError] = useState(false);
 
     return (
-        <div className="admin-card bg-white/60 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(180,100,100)] transition-all duration-300 w-80 h-96">
-            <div className="w-full flex justify-center pt-4 sm:pt-6">
-                <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-[rgb(140,60,60)] shadow-lg bg-white flex items-center justify-center">
+        <div className="admin-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-96 h-[320px]">
+            {/* Header Section */}
+            <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
+            </div>
+
+            {/* Profile Image Section */}
+            <div className="relative -mt-12 flex justify-center">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
                     {member.image && !error ? (
                         <img
                             src={`/${member.image}`}
@@ -70,13 +75,17 @@ const AdminStaffCard = ({ member }) => {
                             onError={() => setError(true)}
                         />
                     ) : (
-                        <span className="text-3xl sm:text-4xl lg:text-5xl text-[rgb(160,80,80)]">👤</span>
+                        <span className="text-4xl text-[rgb(110,35,35)]">👤</span>
                     )}
                 </div>
             </div>
-            <div className="w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-3 sm:py-4 px-3 flex flex-col items-center justify-center flex-grow">
-                <h2 className="text-sm lg:text-base xl:text-xl font-bold text-white font-sans tracking-wide text-center mb-1">{member.name}</h2>
-                <p className="text-xs lg:text-sm xl:text-base text-[rgb(200,120,120)] font-sans text-center leading-tight">{member.position || 'Position not available'}</p>
+
+            {/* Content Section */}
+            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
+                <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2">{member.name}</h2>
+                <div className="flex flex-col gap-1">
+                    <p className="text-sm font-semibold text-gray-700 font-sans">{member.position || 'Position not available'}</p>
+                </div>
             </div>
         </div>
     );
