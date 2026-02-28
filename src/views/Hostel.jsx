@@ -72,7 +72,7 @@ const Hostel = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="container mx-auto relative z-10 flex flex-col items-center justify-center h-full pb-8 px-4">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-white drop-shadow-lg tracking-tight text-center">Hostel Life</h1>
-                    <p className="text-base lg:text-xl text-white drop-shadow text-center font-medium opacity-90">Your Home Away From Home</p>
+                    <p className="text-base lg:text-xl text-white drop-shadow text-center font-medium opacity-90">Your Home Away From Our Home</p>
                 </div>
             </section>
 

@@ -16,9 +16,14 @@ const DeanOffice = () => {
                 </div>
 
                 <div className="flex justify-center">
-                    <div className="dean-card bg-white/70 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden flex flex-col items-center border border-[rgb(200,120,120)] transition-all duration-300 w-full max-w-[400px] group">
-                        <div className="w-full flex justify-center py-10 bg-[rgb(220,140,140)]/50">
-                            <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl overflow-hidden border-4 border-white shadow-xl bg-white transition-transform group-hover:scale-105">
+                    <div className="dean-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[340px]">
+                        {/* Header Section */}
+                        <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
+                        </div>
+
+                        {/* Profile Image Section */}
+                        <div className="relative -mt-16 flex justify-center">
+                            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
                                 <img
                                     src={`/${staffMember.image}`}
                                     alt={staffMember.name}
@@ -26,13 +31,14 @@ const DeanOffice = () => {
                                 />
                             </div>
                         </div>
-                        <div className="w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] py-6 px-4 flex flex-col items-center text-center">
-                            <h2 className="text-lg lg:text-xl xl:text-2xl font-black text-white tracking-widest uppercase mb-1">{staffMember.name}</h2>
-                            <div className="h-1 w-12 bg-[rgb(140,60,60)] rounded-full mb-2"></div>
-                            <p className="text-sm lg:text-base xl:text-lg text-[rgb(200,120,120)] font-bold tracking-wide uppercase opacity-90">{staffMember.position || 'Position not available'}</p>
-                        </div>
-                        <div className="p-6 w-full text-center">
-                            <p className="text-sm text-gray-500 italic">Office of the Dean, Regional Campus Coimbatore</p>
+
+                        {/* Content Section */}
+                        <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
+                            <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight uppercase">{staffMember.name}</h2>
+                            <div className="flex flex-col gap-1">
+                                <p className="text-sm font-semibold text-gray-700 font-sans tracking-wide uppercase">{staffMember.position || 'Position not available'}</p>
+                                <p className="text-xs text-gray-400 font-sans italic mt-2">Office of the Dean, Regional Campus Coimbatore</p>
+                            </div>
                         </div>
                     </div>
                 </div>
