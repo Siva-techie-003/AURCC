@@ -5,20 +5,6 @@ import './HOD.css';
 const HOD = () => {
     const hods = hodsData.departments;
 
-    const deptIcons = {
-        'CSE': '💻',
-        'EEE': '⚡',
-        'ECE': '📡',
-        'MECH': '🛠️',
-        'MBA': '📈',
-        'Science and Humanities': '🔬',
-        'default': '🎓'
-    };
-
-    const getDeptIcon = (dept) => {
-        return deptIcons[dept] || deptIcons.default;
-    };
-
     return (
         <div className="min-h-screen bg-white py-12 px-4 text-left">
             <div className="max-w-7xl mx-auto">
@@ -33,25 +19,31 @@ const HOD = () => {
                     {hods.map((hod, index) => (
                         <div
                             key={index}
-                            className="hod-card bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col items-center border border-[rgb(200,120,120)] transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group animate-fadeInUp"
+                            className="hod-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 w-full max-w-96 h-[380px] mx-auto animate-fadeInUp"
                         >
-                            <div className="w-full h-64 bg-[rgb(220,140,140)]/50 flex justify-center items-center relative overflow-hidden group-hover:bg-[rgb(115,40,40)]/5 transition-colors">
-                                {/* Decorative background circle */}
-                                <div className="absolute w-48 h-48 bg-white rounded-full transition-transform duration-1000 group-hover:scale-150 group-hover:rotate-12"></div>
-                                <img
-                                    src={`/${hod.photo}`}
-                                    alt={hod.name}
-                                    className="relative w-40 h-40 object-cover rounded-full border-4 border-white shadow-2xl z-10 transition-transform duration-500 group-hover:scale-110"
-                                />
+                            {/* Header Section */}
+                            <div className="w-full h-24 bg-[rgb(110,35,35)] relative flex justify-center">
                             </div>
 
-                            <div className="w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] p-8 text-center flex flex-col items-center border-t-4 border-[rgb(140,60,60)]">
-                                <h2 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight mb-2 leading-tight">{hod.name}</h2>
-                                <div className="h-0.5 w-10 bg-[rgb(140,60,60)] mb-4 rounded-full opacity-60"></div>
+                            {/* Profile Image Section */}
+                            <div className="relative -mt-16 flex justify-center">
+                                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md bg-white flex items-center justify-center">
+                                    <img
+                                        src={`/${hod.photo}`}
+                                        alt={hod.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
 
-                                <div className="px-6 py-2 bg-white/10 rounded-full border border-white/20 flex items-center gap-3 backdrop-blur-sm group-hover:bg-[rgb(115,40,40)] transition-colors">
-                                    <span className="text-xl font-bold">{getDeptIcon(hod.department)}</span>
-                                    <span className="text-sm font-black text-[rgb(240,220,220)] uppercase tracking-widest leading-none">{hod.department}</span>
+                            {/* Content Section */}
+                            <div className="w-full p-6 flex flex-col items-center flex-grow text-center justify-center">
+                                <h2 className="text-xl font-bold text-[rgb(110,35,35)] font-serif mb-2 leading-tight uppercase">{hod.name}</h2>
+                                <div className="flex flex-col gap-2">
+                                    <div className="px-4 py-1.5 bg-[rgb(245,240,240)] rounded-full border border-[rgb(220,200,200)] flex items-center justify-center">
+                                        <span className="text-xs font-bold text-[rgb(110,35,35)] uppercase tracking-wide text-center">{hod.department}</span>
+                                    </div>
+                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Head of the Department</p>
                                 </div>
                             </div>
                         </div>

@@ -2,7 +2,9 @@
     {   "address": "cse",
         "image": "cse-girls-closeup.webp",
         "name": "Department of Computer Science and Engineering",
-        "description": "The Department of Computer Science and Engineering aims at producing technically competent professionals who can excel in today’s age of technology. Recognizing its role in engineering education, generation, and dissemination, the department is equipped with state-of-the-art facilities and relevant technologies. Computer Science or Computing Science is the scientific and mathematical approach to computation, specifically referring to the design of computing machines and processes.",
+        "description": ["The Department of Computer Science and Engineering aims at producing technically competent professionals who can excel in today’s age of technology. Recognizing its role in engineering education, generation, and dissemination, the department is equipped with state-of-the-art facilities and relevant technologies. Computer Science or Computing Science is the scientific and mathematical approach to computation, specifically referring to the design of computing machines and processes.",
+		"The department places strong emphasis on building a solid foundation in core computing concepts such as algorithms, data structures, programming paradigms, and computer systems, while also encouraging innovation and problem-solving skills. Through a balanced blend of theory and practical exposure, students are trained to adapt to emerging technologies and industry trends. The department fosters a culture of continuous learning, research orientation, and ethical practice, enabling graduates to pursue successful careers in industry, higher education, and research while contributing meaningfully to technological advancement and societal development."
+	],
         "vision": "To emerge as a world-class institution in engineering education and research, contributing to societal development and sustainable growth.",
         "mission": [
             "Impart quality education to produce competent engineers with a strong theoretical foundation and practical skills.",
@@ -914,7 +916,7 @@
             {
                 "name": "Dr. N. Fareena",
 				"image": "fareena2.webp",
-                "position": "Assistant Professor",
+                "position": "Assistant Professor (.......... ..............)",
                 "email": "fareena.aurcc@gmail.com",
                 "education": [
                     {
@@ -1051,7 +1053,8 @@
 	{	"address":"mech",
 		"image":"mechhead.webp",
 		"name": "Mechanical Engineering",
-		"description": "The Department of Mechanical Engineering was established in the year 2007 with undergraduate (UG) programmes, followed by the introduction of postgraduate (PG) programmes. The team comprises potential faculty and administrative personnel dedicated to the conduct of programmes and the establishment of various laboratories to ensure smooth and efficient departmental operations. The main objective of the department is to create a highly skilled and dedicated workforce capable of facing global challenges.",
+		"description": ["The Department of Mechanical Engineering was established in the year 2007 with undergraduate (UG) programmes, followed by the introduction of postgraduate (PG) programmes. The team comprises potential faculty and administrative personnel dedicated to the conduct of programmes and the establishment of various laboratories to ensure smooth and efficient departmental operations. The main objective of the department is to create a highly skilled and dedicated workforce capable of facing global challenges.","The department places strong emphasis on building a solid foundation in core computing concepts such as algorithms, data structures, programming paradigms, and computer systems, while also encouraging innovation and problem-solving skills. Through a balanced blend of theory and practical exposure, students are trained to adapt to emerging technologies and industry trends. The department fosters a culture of continuous learning, research orientation, and ethical practice, enabling graduates to pursue successful careers in industry, higher education, and research while contributing meaningfully to technological advancement and societal development."
+	],
 		"vision": "The Department of Mechanical Engineering strives to be globally renowned for outstanding technical education and research leading to highly-qualified ethical engineers, who are innovative, entrepreneurial and successful in advanced fields of engineering and research.",
 		"mission": [
 		"Through professionalism in teaching, instill the spirit of commitment and problem-solving methodologies.",
@@ -1359,7 +1362,8 @@
 	{	"address": "mba",
 		"image": "mbahead.webp",
 		"name": "MBA - Masters of Business Administration",
-		"description": "The Department offers Master of Business Administration (MBA) course at Anna University Regional Campus Coimbatore as a four-semester regular programme spread over two academic years. The course structure is designed to impart knowledge in areas of specialization, viz. Marketing, Human Resource, Finance, Systems, and Production specializations. The department has two aims: to increase the understanding of the factors which influence the conduct of organizations and to offer students the tools and techniques which they may use to navigate organizational life.",
+		"description": ["The Department offers Master of Business Administration (MBA) course at Anna University Regional Campus Coimbatore as a four-semester regular programme spread over two academic years. The course structure is designed to impart knowledge in areas of specialization, viz. Marketing, Human Resource, Finance, Systems, and Production specializations. The department has two aims: to increase the understanding of the factors which influence the conduct of organizations and to offer students the tools and techniques which they may use to navigate organizational life.","The department places strong emphasis on building a solid foundation in core computing concepts such as algorithms, data structures, programming paradigms, and computer systems, while also encouraging innovation and problem-solving skills. Through a balanced blend of theory and practical exposure, students are trained to adapt to emerging technologies and industry trends. The department fosters a culture of continuous learning, research orientation, and ethical practice, enabling graduates to pursue successful careers in industry, higher education, and research while contributing meaningfully to technological advancement and societal development."
+	],
 		"vision": "The Department strives to provide a stimulating environment for learning, to maximize individual potential, and empower students to meet the challenges of their dynamic environment.",
 		"mission": ["Our mission is to disseminate managerial expertise by developing human resources to meet the country's entrepreneurial and workforce needs with an adaptive approach to our cultural, ethical, and professional norms."],
 		"courses_offered":["M.B.A.(FULL TIME)-Marketing,HR,Finance,Systems and Production Specializations","M.B.A.(FULL TIME) - BUSINESS ANALYTICS","Ph.D.,(FULL TIME and PART TIME mode)"],
@@ -1977,7 +1981,8 @@
         "address":"eee",
         "image":"ece2.webp",
         "name": "Department of Electrical and Electronics Engineering",
-        "description":"The Department aims to impart the Students a learning Experience in understanding the fundamental concepts of Electrical & Electronics Engineering built on the Foundation of Science, Mathematics, Computing and Technology by active learning process with dedicated faculty members and extensive laboratory facilities so as to prepare them for their Professional Careers. It also prepares the  students to meet the growing global challenges of Engineering Industries by educating them to become highly professional Electrical and Electronics Engineers of high ethics. The Department produces highly qualified Engineers not only to meet the Global environment but also to build a developed nation.",
+        "description":["The Department aims to impart the Students a learning Experience in understanding the fundamental concepts of Electrical & Electronics Engineering built on the Foundation of Science, Mathematics, Computing and Technology by active learning process with dedicated faculty members and extensive laboratory facilities so as to prepare them for their Professional Careers. It also prepares the  students to meet the growing global challenges of Engineering Industries by educating them to become highly professional Electrical and Electronics Engineers of high ethics. The Department produces highly qualified Engineers not only to meet the Global environment but also to build a developed nation.","The department places strong emphasis on building a solid foundation in core computing concepts such as algorithms, data structures, programming paradigms, and computer systems, while also encouraging innovation and problem-solving skills. Through a balanced blend of theory and practical exposure, students are trained to adapt to emerging technologies and industry trends. The department fosters a culture of continuous learning, research orientation, and ethical practice, enabling graduates to pursue successful careers in industry, higher education, and research while contributing meaningfully to technological advancement and societal development."
+	],
         "vision":
                 "To be a centre of excellence by imparting quality teaching, carrying out effective research and technology development in frontier areas of Electrical and Electronics Engineering.",
         "mission":[
@@ -3296,8 +3301,9 @@
 		"image":"ece.webp",
 		"name": "Department of Electronics and Communication Engineering",
 		"description": 
-		  "The Department of Electronics and Communication Engineering was established in the year 2007. The Department offers UG Programme and two year PG Programme. The Department is equipped with excellent infrastructure and state of the art equipment to explore the technological challenges in the areas of Electronics, Communication Networks, VLSI design, Signal Processing, Image Processing, ASIC Design, RF Design and Digital system design."
-		,
+		  ["The Department of Electronics and Communication Engineering was established in the year 2007. The Department offers UG Programme and two year PG Programme. The Department is equipped with excellent infrastructure and state of the art equipment to explore the technological challenges in the areas of Electronics, Communication Networks, VLSI design, Signal Processing, Image Processing, ASIC Design, RF Design and Digital system design."
+		,"The department places strong emphasis on building a solid foundation in core computing concepts such as algorithms, data structures, programming paradigms, and computer systems, while also encouraging innovation and problem-solving skills. Through a balanced blend of theory and practical exposure, students are trained to adapt to emerging technologies and industry trends. The department fosters a culture of continuous learning, research orientation, and ethical practice, enabling graduates to pursue successful careers in industry, higher education, and research while contributing meaningfully to technological advancement and societal development."
+	],
 		"vision":
 		  "To create an educational environment in which students are prepared to meet the challenges of modern Industrial society by equipping them with: Up to date Technical Knowledge. Analytical and Practical skills. A creative and innovative approach to work."
 		,
