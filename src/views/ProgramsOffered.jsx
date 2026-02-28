@@ -2,19 +2,27 @@
 import ProgramCard from '../components/ProgramCard';
 import data from '../assets/programs_offered.json';
 import './ProgramsOffered.css';
+import cseIcon from '../assets/icons/cse.png';
+import mechIcon from '../assets/icons/mech.png';
+import eceIcon from '../assets/icons/ece.png';
+import vlsiIcon from '../assets/icons/vlsi.png';
+import aiIcon from '../assets/icons/ai.png';
+import mbaIcon from '../assets/icons/mba.png';
+import business_analyticsIcon from '../assets/icons/business_analytics.png';
+import eeeIcon from '../assets/icons/eee.png';
 
 const ProgramsOffered = () => {
 
     const iconMap = {
-        'COMPUTER SCIENCE': '💻',
-        'ELECTRONICS': '📡',
+        'COMPUTER SCIENCE': cseIcon,
+        'ELECTRONICS': eceIcon,
         'ELECTRICAL': '⚡',
-        'MECHANICAL': '🛠️',
-        'ARTIFICIAL INTELLIGENCE': '🤖',
-        'VLSI': '🔲',
-        'MBA': '📈',
-        'BUSINESS ANALYTICS': '📊',
-        'default': '🎓'
+        'MECHANICAL': mechIcon,
+        'ARTIFICIAL INTELLIGENCE': aiIcon,
+        'VLSI': vlsiIcon,
+        'MBA': mbaIcon,
+        'BUSINESS ANALYTICS': business_analyticsIcon,
+        'default': mbaIcon
     };
 
     const getIcon = (course) => {
@@ -61,7 +69,7 @@ const ProgramsOffered = () => {
                 <h2 className="text-2xl lg:text-4xl font-black text-[rgb(90,20,20)] uppercase tracking-tight">
                     {title}
                 </h2>
-                <div className="h-1.5 w-20 bg-[rgb(220,140,140)] mt-4 rounded-full"></div>
+                <div className="h-1.5 w-20  mt-4 rounded-full"></div>
             </div>
         </header>
     );
@@ -70,23 +78,44 @@ const ProgramsOffered = () => {
         <div className="flex-grow bg-white min-h-screen text-left">
 
             {/* Hero Section */}
-            <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[45vh] overflow-hidden flex items-center justify-center">
-                <img
-                    src="/programsoffered.webp"
-                    alt="Programs Offered"
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-[rgb(90,20,20)]/80"></div>
+<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
 
-                <div className="relative z-10 text-center px-4">
-                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-4">
-                        Academic Programs
-                    </h1>
-                    <p className="text-base sm:text-lg lg:text-xl text-[rgb(180,100,100)] font-bold max-w-3xl mx-auto opacity-90 leading-tight">
-                        Empowering the next generation of engineers and management professionals.
-                    </p>
-                </div>
-            </section>
+    {/* Background Image */}
+    <img
+        src="/programsoffered.webp"
+        alt="Programs Offered"
+        className="absolute inset-0 w-full h-full object-cover"
+    />
+
+    {/* Soft Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+
+    {/* Glass Card */}
+    <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
+                    max-w-4xl w-full text-center
+                    bg-[rgb(200,20,20)]/30 backdrop-blur-xl
+                    border border-white/30
+                    rounded-3xl
+                    shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                    transition-all duration-500">
+
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl 
+                       font-black text-white 
+                       tracking-tight mb-4">
+            Academic Programs
+        </h1>
+
+        <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+
+        <p className="text-sm sm:text-lg lg:text-xl 
+                      text-gray-100 font-medium 
+                      leading-relaxed max-w-2xl mx-auto">
+            Empowering the next generation of engineers and management professionals.
+        </p>
+
+    </div>
+
+</section>
 
             <main className="max-w-7xl mx-auto py-16 px-4 space-y-24">
 

@@ -16,19 +16,38 @@ const Regulation = () => {
 
     return (
         <div className="flex-grow bg-gradient-to-br from-gray-100 via-[rgb(255, 255, 255)] to-white min-h-screen text-left">
-            {/* Hero section */}
-            <section className="relative w-full h-48 sm:h-60 md:h-80 lg:h-[40vh] overflow-hidden flex items-center justify-center">
+            {/* Hero Section */}
+<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
+
+    {/* Background Image */}
                 <img
                     src="/regulation.webp"
                     alt="Regulations"
                     className="absolute inset-0 w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-[rgb(90,20,20)]/80"></div>
-                <div className="relative z-10 text-center animate-fadeIn px-4">
-                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-4">Regulations</h1>
-                    <div className="h-2 w-24 bg-[rgb(220,140,140)]0 mx-auto rounded-full"></div>
-                </div>
-            </section>
+
+    {/* Soft Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+
+    {/* Glass Card */}
+    <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
+                    max-w-4xl w-full text-center
+                    bg-white/30 backdrop-blur-xl
+                    border border-white/30
+                    rounded-3xl
+                    shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                    transition-all duration-500">
+
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl 
+                       font-black text-white 
+                       tracking-tight mb-4">
+            Regulations
+        </h1>
+                <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+
+</div>
+
+</section>
 
             <main className="max-w-7xl mx-auto py-16 px-4 space-y-20">
                 <section className="animate-fadeInUp">

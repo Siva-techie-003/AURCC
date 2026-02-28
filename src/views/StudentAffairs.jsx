@@ -51,25 +51,45 @@ const StudentAffairs = () => {
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 text-left">
-            {/* Hero section */}
-            <section
-                className="bg-cover bg-center relative h-64 sm:h-72 md:h-80 lg:h-96"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
-            >
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgb(115,63,63)]/60 to-[rgb(115,25,25)]/40"></div>
-                <div className="container mx-auto h-full flex items-center relative z-10 px-4">
-                    <div className="max-w-2xl">
-                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-white">
-                            <span className="bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)] bg-clip-text text-transparent">
-                                Student Affairs
-                            </span>
-                        </h1>
-                        <p className="text-base sm:text-lg lg:text-xl text-gray-100 leading-relaxed font-medium">
-                            The Office of Student Affairs is dedicated to students' academic and personal success.
-                        </p>
-                    </div>
-                </div>
-            </section>
+{/* Hero Section */}
+<section className="relative w-full h-56 sm:h-72 md:h-96 lg:h-[50vh] flex items-center justify-center overflow-hidden">
+
+    {/* Background Image */}
+    <img
+        src={backgroundImage}
+        alt="Student Affairs"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+    />
+
+    {/* Soft Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/20 to-black/20"></div>
+
+    {/* Glass Card */}
+    <div className="relative z-10 mx-4 px-8 sm:px-12 py-8 sm:py-10 
+                    max-w-4xl w-full text-center
+                    bg-[rgb(200,20,20)]/45 backdrop-blur-2xl
+                    border border-white/30
+                    rounded-3xl
+                    shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+                    transition-all duration-500">
+
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl 
+                       font-black text-white 
+                       tracking-tight mb-4">
+            Student Affairs
+        </h1>
+        <div className="w-20 h-1 bg-yellow-400 mx-auto mb-5 rounded-full"></div>
+
+        <p className="text-sm sm:text-lg lg:text-xl 
+                      text-gray-100 
+                      font-medium 
+                      leading-relaxed max-w-2xl mx-auto">
+            The Office of Student Affairs is dedicated to students' academic and personal success.
+        </p>
+
+    </div>
+
+</section>
 
             {/* Navigation Tabs - Modern floating design */}
             <div className="sticky top-6 z-20">
