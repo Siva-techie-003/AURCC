@@ -10,7 +10,7 @@ const Header = () => {
             name: "Life@aurcc",
             isOpen: false,
             links: [
-                { name: "Sports", route: "/sports" },
+                { name: "Physical Education", route: "/sports" },
                 { name: "NSS", route: "/nss" },
                 { name: "Kani Tamil Peravai", route: "/tamilmandram" },
                 { name: "Fine Arts Club", route: "/fine-arts" },

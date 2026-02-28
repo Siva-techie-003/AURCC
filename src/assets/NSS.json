@@ -33,12 +33,8 @@
         "Name": "Dr. S. V. Manisekaran",
         "Designation": "Programme Officer",
         "Photo": "/mani.webp"
-      },
-      {
-        "Name": "Dr. J. Lakshmi",
-        "Designation": "Assistant Professor",
-        "Photo": "/lakshmi.webp"
-      }
+       }
+     
     ]
   },
   "achievements": [

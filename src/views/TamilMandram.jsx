@@ -52,7 +52,7 @@ const TamilMandram = () => {
 " />
                 <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
                 <div className="absolute inset-0 flex items-center justify-center z-10 px-2">
-                    <div className=" rounded-2xl shadow-lg px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 flex flex-col items-center w-full max-w-xl border border-white/30 animate-slideIn">
+                    <div className=" backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center w-cover max-w-5xl mx-auto border border-white/30 animate-popIn">
                         <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center leading-tight">{data.name}</h1>
                     </div>
                 </div>

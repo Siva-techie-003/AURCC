@@ -62,7 +62,7 @@ const NSS = () => {
                 <img src="/nsslogo.png" alt="NSS" className="absolute inset-15 w-900 h-800 object-cover object-center" />
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/60 via-black/30 to-transparent"></div>
                 <div className="absolute inset-0 flex items-center justify-center z-10 px-2">
-                    <div className="rounded-2xl shadow-lg px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 py-3 sm:py-4 md:py-6 lg:py-8 xl:py-10 flex flex-col items-center w-full max-w-xl border border-white/30">
+                    <div className="backdrop-blur-md bg-brown/30 rounded-2xl shadow-lg px-6 py-6 md:py-10 flex flex-col items-center max-w-2xl mx-auto border border-white/30 animate-popIn">
                         <h1 className="text-lg sm:text-xl lg:text-3xl xl:text-4xl font-extrabold text-white drop-shadow-lg tracking-wide text-center mb-2 leading-tight">{data.name}</h1>
                         <p className="text-xs sm:text-sm lg:text-base xl:text-lg text-white drop-shadow text-center font-medium">Community Service. Personality Development.</p>
                     </div>
