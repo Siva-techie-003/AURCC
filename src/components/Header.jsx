@@ -48,7 +48,7 @@ const Header = () => {
                 { name: "Electronics & communication Engineering", route: "/departments/ece" },
                 { name: "Mechanical Engineering", route: "/departments/mech" },
                 { name: "MBA", route: "/departments/mba" },
-                { name: "Science & Humanities Department", route: "/s&h" },
+                { name: "Science & Humanities Department", route: "/departments/science-and-humanities" },
             ],
         },
         {

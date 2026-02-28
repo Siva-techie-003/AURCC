@@ -187,8 +187,8 @@ const BACKEND_URL = "http://localhost:5000";
                                                 <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl text-white font-bold text-center">About Department</h2>
                                             </div>
                                             <div className="p-8 md:p-10">
-                                                <ul className="text-base lg:text-lg text-gray-700 leading-relaxed">{(department?.description || []).map((description, i) => (
-                                                        <li key={i} className="pl-4">{description}</li>
+                                                <ul className="text-base text-justify lg:text-lg text-gray-700 leading-relaxed">{(department?.description || []).map((description, i) => (
+                                                        <li key={i} className="pl-4 mb-6">{description}</li>
                                                     ))}</ul>
                                             </div>
                                         </div>
@@ -385,12 +385,12 @@ const BACKEND_URL = "http://localhost:5000";
                                     <span className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 w-full bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></span>
                                 </h2>
                             </div>
-                            {/* HOD Desk */}
+                           {/* HOD Desk */}
                             <div className="mb-12 sm:mb-14 lg:mb-16">
                                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center mb-6 sm:mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]">Head of Department</h3>
                                 <div className="flex justify-center">
                                     {(Array.isArray(department?.faculty?.hod_desk) ? department.faculty.hod_desk : []).map((staff, i) => (
-                                        <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform transition-all duration-300 cursor-pointer min-h-[340px] max-w-[320px] w-50 flex-shrink-0 flex-grow-0 hover:-translate-y-3 hover:scale-[1.03] hover:shadow-2xl hover:border-[rgb(115,40,40)]" onClick={() => showDetails(staff)}>
+                                        <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform transition-all duration-300 cursor-pointer min-h-[380px] max-w-[320px] w-80 flex-shrink-0 flex-grow-0 hover:-translate-y-3 hover:scale-[1.03] hover:shadow-2xl hover:border-[rgb(115,40,40)]" onClick={() => showDetails(staff)}>
                                             <div className="relative pt-2 flex justify-center">
                                                 <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                                                 <div className="relative">
@@ -412,7 +412,7 @@ const BACKEND_URL = "http://localhost:5000";
                                 <h3 className="text-2xl font-bold text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]">Professors</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
                                     {(Array.isArray(department?.faculty?.assistant_professors) ? department.faculty.assistant_professors : []).map((staff, i) => (
-                                        <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform transition-all duration-300 cursor-pointer min-h-[340px] max-w-[320px] w-50 flex-shrink-0 flex-grow-0 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-[rgb(115,40,40)]" onClick={() => showDetails(staff)}>
+                                        <div key={i} className="bg-white rounded-xl shadow-lg overflow-hidden border border-[rgb(200,120,120)] transform transition-all duration-300 cursor-pointer min-h-[380px] max-w-[320px] w-80 flex-shrink-0 flex-grow-0 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:border-[rgb(115,40,40)]" onClick={() => showDetails(staff)}>
                                             <div className="relative pt-2 flex justify-center">
                                                 <div className="absolute inset-0 h-1/2 bg-gradient-to-r from-[rgb(115,63,63)] to-[rgb(115,25,25)]"></div>
                                                 <div className="relative">

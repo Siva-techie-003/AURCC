@@ -40,7 +40,7 @@ const CurriculumSyllabus = lazy(() => import('./views/CurriculumSyllabus'));
 const StudentAffairs = lazy(() => import('./views/StudentAffairs'));
 const COD = lazy(() => import('./views/COD'));
 const EstateOffice = lazy(() => import('./views/EstateOffice'));
-const ScienceHumanities = lazy(() => import('./views/ScienceHumanities'));
+// const ScienceHumanities = lazy(() => import('./views/ScienceHumanities'));
 const Grievance = lazy(() => import('./views/Grievance'));
 const News = lazy(() => import('./views/News'));
 const Events = lazy(() => import('./views/Events'));
@@ -93,7 +93,7 @@ function App() {
                         <Route path="/COD" element={<COD />} />
                         <Route path="/administrator" element={<Registrar />} />
                         <Route path="/EstateOff" element={<EstateOffice />} />
-                        <Route path="/s&h" element={<ScienceHumanities />} />
+                        {/* <Route path="/s&h" element={<ScienceHumanities />} /> */}
                         <Route path="/Grievence" element={<Grievance />} />
                         <Route path="/news" element={<News />} />
                         <Route path="/events" element={<Events />} />
